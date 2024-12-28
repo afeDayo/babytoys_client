@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap");
+
+.foot-img {
+  max-width: 1440px;
+  width: 100%;
+}
+
+.inn-footer {
+  top: 134px;
+  left: 6.875%;
+  gap: 80px;
+  font-family: "Comfortaa", sans-serif;
+  width: 821px;
+}
+
+.foot-one {
+  gap: 32px;
+}
+
+.foot-one p {
+  font-weight: 400;
+  line-height: 22.4px;
+  color: #2d2d2d;
+  width: 243px;
+}
+
+.foot-two,
+.foot-three {
+  gap: 28px;
+}
+
+.foot-two h5,
+.foot-three h5 {
+  font-weight: 700;
+  color: #2d2d2d;
+}
+
+.foot-two p,
+.foot-three p {
+  margin-bottom: 0;
+  color: #2d2d2d;
+}
+
+.foot-three p span {
+  color: #0f83b2;
+}

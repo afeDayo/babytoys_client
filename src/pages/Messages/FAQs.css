@@ -1,0 +1,62 @@
+@import url("https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap");
+
+.faq-one p {
+  font-size: 22px;
+  font-weight: 400;
+  font-family: "Balsamiq Sans", sans-serif;
+}
+
+.faq-one p a {
+  color: #171717;
+}
+
+.faq-one p span a {
+  color: #0f749d;
+}
+
+.faq-two {
+  padding-top: 20px;
+  padding-bottom: 80px;
+}
+
+.faq-two h2 {
+  font-size: 38px;
+  font-weight: 700;
+  color: #191919;
+  font-family: "Balsamiq Sans", sans-serif;
+}
+
+.arcodion {
+  padding: 30px;
+  border: 2px solid #d4d4d4;
+  font-family: "Comfortaa", sans-serif;
+}
+
+.arcodion h5 {
+  font-weight: 700;
+  color: #191919;
+}
+
+.arcodion .faq-para {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 3s ease-out;
+}
+
+.arcodion .arco-item.active .faq-para {
+  max-height: 200px;
+}
+
+.faq-click {
+  cursor: pointer;
+  user-select: none;
+}
+
+.faq-click img {
+  transition: transform 0.8s ease;
+}
+
+.arcodion .arco-item.active img {
+  transform: rotate(180deg);
+}

@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2:wght@400..800&display=swap");
+
+.hero p,
+.hero a {
+  font-family: "Comfortaa", sans-serif;
+}
+
+.hero img {
+  max-width: 1440px;
+  width: 100%;
+}
+
+.h-text {
+  text-align: start;
+  top: 178px;
+  right: 8.33%;
+  left: 50.56%;
+  gap: 68px;
+}
+
+.h-text h1 {
+  font-size: 67.86px;
+  font-weight: bolder;
+  color: #1096b5;
+  font-family: "Baloo Bhaina 2", sans-serif;
+  text-shadow: 5px 0 0 #ffffff;
+}
+
+.h-text p {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 28px;
+  color: #375259;
+}
+
+.h-text a {
+  padding: 22px 46px;
+  background-color: #ffe926;
+  border-radius: 74px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #191919;
+}
