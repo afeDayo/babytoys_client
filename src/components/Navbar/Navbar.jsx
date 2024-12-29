@@ -2,10 +2,9 @@ import React from "react";
 import navLogo from "../../assets/Images/image 2.png";
 import blueTop from "../../assets/Images/Union.png";
 import delivery from "../../assets/Images/Free Shipping.png";
-import navCart from "../../assets/Images/CartMajor.png";
-import navSearch from "../../assets/Images/navsearch.png";
 import "./Navbar.css";
 import { Link } from "react-router-dom";
+import Search from "../Search/Search";
 
 const Navbar = () => {
   return (
@@ -82,12 +81,8 @@ const Navbar = () => {
           </Link>
         </div>
 
-        <div className="d-flex align-items-center gap-5">
-          <img src={navCart} alt="" />
-          <div className="position-relative">
-            <input className="navinput" type="text" placeholder="Search" />
-            <img className="position-absolute end-0" src={navSearch} alt="" />
-          </div>
+        <div>
+          <Search />
         </div>
       </div>
     </nav>
