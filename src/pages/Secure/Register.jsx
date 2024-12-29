@@ -15,7 +15,7 @@ const Register = () => {
   const [success, setSuccess] = useState("");
 
   const handleChange = (event) => {
-    setFormData({ ...formData, [event.target.email]: event.target.value });
+    setFormData({ ...formData, [event.target.name]: event.target.value });
   };
 
   const handleSubmit = async (event) => {
