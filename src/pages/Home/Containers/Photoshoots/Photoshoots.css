@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+.photo-tits h2 {
+  font-family: "Balsamiq Sans", sans-serif;
+  font-size: 38px;
+  font-weight: 700;
+  color: #191919;
+}
+
+.photo-tits p {
+  font-family: "Comfortaa", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  color: #2d2d2d;
+}
+
+.photo-img img {
+  width: 360px;
+  height: 360px;
+  object-fit: cover;
+}
+
+.benefits {
+  gap: 20px;
+}
+
+.newslet {
+  width: 724px;
+  margin: auto;
+}
+
+.news-tits h2 {
+  font-family: "Balsamiq Sans", sans-serif;
+  font-size: 38px;
+  font-weight: 700;
+  color: #191919;
+}
+
+.news-tits p {
+  font-family: "Comfortaa", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  color: #2d2d2d;
+}
+
+.news-in {
+  gap: 12px;
+}
+
+.news-in input {
+  padding: 10px 20px;
+  width: 377px;
+  border-radius: 10px;
+  border: 2px solid #d4d4d4;
+}
+
+.news-in input::placeholder {
+  font-family: "Comfortaa", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #7f7f7f;
+}
+
+.news-in button {
+  background-color: #0f83b2;
+  border-radius: 15px;
+  color: #f8f8f8;
+  font-family: "Comfortaa", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  padding: 12px 24px;
+}
+
+.news-in button:hover {
+  background-color: #0056b3;
+}
+
+.news-msg {
+  margin-top: 10px;
+  font-size: 14px;
+  color: green;
+}

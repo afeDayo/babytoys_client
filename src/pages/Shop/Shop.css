@@ -1,0 +1,61 @@
+.product-grid {
+  width: 65%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 30px;
+}
+
+.each-card {
+  transition: transform 0.3s;
+  width: 295px;
+  height: 398px;
+  margin-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 12px;
+}
+
+.each-card:hover {
+  transform: scale(1.05);
+}
+
+.each-card img {
+  width: 220px;
+  height: 220px;
+}
+
+.each-img {
+  border: 2px solid #d4d4d4;
+  width: 295px;
+  height: 295px;
+  border-radius: 20px;
+}
+
+.lovee-cart {
+  top: 17px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  right: 17px;
+}
+
+.name-pri {
+  gap: 6px;
+}
+
+.name-pri h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #191919;
+  font-family: "Comfortaa", sans-serif;
+  text-align: start;
+}
+
+.name-pri p {
+  font-family: "Poppins", serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #171717;
+}

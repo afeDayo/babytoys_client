@@ -1,10 +1,20 @@
 import React, { useEffect, useState } from "react";
 import axios from "../../api/axios";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import "./Shop.css";
+import { FaRegHeart } from "react-icons/fa";
+import { FiShoppingCart } from "react-icons/fi";
+import ProductRating from "../../components/ProductRating/ProductRating";
 
 const Shop = () => {
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const category = queryParams.get("category");
+
   const [products, setProducts] = useState([]);
+  const [filteredProducts, setFilteredProducts] = useState([]);
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -12,39 +22,70 @@ const Shop = () => {
         const response = await axios.get("/api/products");
         setProducts(response.data);
       } catch (err) {
-        setError(err.response?.data?.message || "Failed to fetch products");
+        setError("Failed to fetch products. Please try again later.");
+      } finally {
+        setLoading(false);
       }
     };
 
     fetchProducts();
   }, []);
 
+  useEffect(() => {
+    if (category) {
+      setFilteredProducts(
+        products.filter((product) => product.category === category)
+      );
+    } else {
+      setFilteredProducts(products);
+    }
+  }, [category, products]);
+
+  if (loading) {
+    return <p>Loading products...</p>;
+  }
+
   if (error) {
     return <p>{error}</p>;
   }
 
-  if (!products.length) {
-    return <p>Loading...</p>;
-  }
-
   return (
-    <div>
+    <div className="shop-container">
       <h1>SHOP</h1>
-      <div>
-        {products.map((product) => (
-          <div key={product._id}>
-            <Link to={`/product/${product._id}`}>
-              <h2>{product.name}</h2>
-            </Link>
-            <p>{product.price}</p>
-            <img
-              src={product.image}
-              alt={product.name}
-              style={{ width: "150px", height: "150px" }}
-            />
-          </div>
-        ))}
-      </div>
+      {filteredProducts.length ? (
+        <div className="product-grid">
+          {filteredProducts.map((product) => (
+            <div key={product._id} className="each-card">
+              <Link
+                to={`/product/${product._id}`}
+                className="text-decoration-none text-black"
+              >
+                <div className="each-img position-relative d-flex align-items-center justify-content-center">
+                  <img className="m-0" src={product.image} alt={product.name} />
+                  <div className="lovee-cart position-absolute">
+                    <FaRegHeart />
+                    <FiShoppingCart />
+                  </div>
+                </div>
+
+                <div className="looo-card mt-4 d-flex flex-column align-items-start justify-content-start">
+                  <div className="name-pri d-flex flex-column align-items-start justify-content-start">
+                    <h3 className="m-0">{product.name}</h3>
+                    <p className="m-0">₦{product.price.toLocaleString()}</p>
+                  </div>
+                </div>
+              </Link>
+              <ProductRating
+                key={product._id}
+                productId={product._id}
+                initialRating={product.ratings?.average}
+              />
+            </div>
+          ))}
+        </div>
+      ) : (
+        <p>No products found in this category.</p>
+      )}
     </div>
   );
 };

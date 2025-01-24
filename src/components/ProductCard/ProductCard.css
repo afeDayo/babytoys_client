@@ -1,0 +1,20 @@
+.star-rating {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+.star {
+  cursor: pointer;
+  color: lightblue;
+  transition: color 0.5s ease-in-out;
+}
+
+.star.active {
+  color: #ffca28;
+}
+
+.star:hover {
+  color: #f26c62;
+  transform: scale(1.2);
+}

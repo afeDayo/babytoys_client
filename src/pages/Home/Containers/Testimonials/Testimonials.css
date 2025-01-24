@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+.testi-con {
+  padding: 0 100px;
+}
+
+.testi-tits h2 {
+  font-family: "Balsamiq Sans", sans-serif;
+  font-size: 38px;
+  font-weight: 700;
+  color: #191919;
+}
+
+.testi-tits p {
+  font-family: "Comfortaa", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  color: #2d2d2d;
+}
+
+.testimonial-carousel {
+  position: relative;
+  max-width: 1240px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.carousel-itemz {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(0);
+  transition: transform 1s ease-in-out;
+}
+
+.testimonial-item {
+  flex: 1;
+  width: 400px;
+  background-color: #faefef;
+  border-radius: 10px;
+  padding: 37px 45px 17px 45px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.star-t {
+  font-size: 20px;
+  color: gold;
+}
+
+.test-comm {
+  font-family: "Comfortaa", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20.8px;
+  color: #4a4748;
+}
+
+.person-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ddd;
+}
+
+h4 {
+  font-family: "Comfortaa", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #4a4748;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.arrow.left {
+  left: 5px;
+}
+
+.arrow.right {
+  right: 5px;
+}

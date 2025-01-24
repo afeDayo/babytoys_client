@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+.caro-con {
+  padding-top: 50px;
+  padding-bottom: 40px;
+  gap: 32px;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+.caro-but h2 {
+  font-size: 38px;
+  font-weight: 700;
+  color: #191919;
+  font-family: "Balsamiq Sans", sans-serif;
+}
+
+.carousel-buttons {
+  gap: 60px;
+}
+
+.carousel-btn {
+  border-radius: 43px;
+  font-size: 20px;
+  font-weight: 600;
+  font-family: "Comfortaa", sans-serif;
+  color: #2d2d2d;
+  border: none;
+  background-color: #ffffff;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background-color 0.5s;
+}
+
+.carousel-btn.active {
+  background-color: #f8edf8;
+}
+
+.carousel-container {
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 1s ease-in-out;
+}
+
+.carousel-slide {
+  min-width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0px;
+  padding: 10px;
+}
+
+.product-card {
+  transition: transform 0.3s;
+  width: 295px;
+  height: 398px;
+  margin-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 21px;
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+}
+
+.product-card img {
+  width: 220px;
+  height: 220px;
+}
+
+.card-img {
+  border: 2px solid #d4d4d4;
+  width: 295px;
+  height: 295px;
+  border-radius: 20px;
+}
+
+.loo-card {
+  gap: 12px;
+}
+
+.love-cart {
+  top: 17px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  right: 17px;
+}
+
+.nam-pri {
+  gap: 6px;
+}
+
+.nam-pri h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #191919;
+  font-family: "Comfortaa", sans-serif;
+  text-align: start;
+}
+
+.nam-pri p {
+  font-family: "Poppins", serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #171717;
+}

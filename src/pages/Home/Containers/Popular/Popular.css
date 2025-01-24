@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+.popular-con {
+  padding: 0 100px;
+}
+
+.popular-slide {
+  min-width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0px;
+  padding: 10px;
+}
+
+.popular-card {
+  transition: transform 0.3s;
+  width: 295px;
+  height: 398px;
+  margin-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 21px;
+}
+
+.popular-card:hover {
+  transform: scale(1.05);
+}
+
+.popular-card img {
+  width: 220px;
+  height: 220px;
+}
+
+.popular-img {
+  border: 2px solid #d4d4d4;
+  width: 295px;
+  height: 295px;
+  border-radius: 20px;
+}
+
+.loopop-card {
+  gap: 12px;
+}
+
+.lovepop-cart {
+  top: 17px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  right: 17px;
+}
+
+.nampop-pri {
+  gap: 6px;
+}
+
+.nampop-pri h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #191919;
+  font-family: "Comfortaa", sans-serif;
+  text-align: start;
+}
+
+.nampop-pri p {
+  font-family: "Poppins", serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #171717;
+}
+
+.inner-play {
+  left: 140px;
+  top: 80px;
+  transition: 0.7s ease-in-out;
+}
+
+.inner-play:hover {
+  transform: scale(1.1);
+}
+
+.play-text {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 50.4px;
+  color: #1096b5;
+  font-family: "Balsamiq Sans", sans-serif;
+  width: 216px;
+  top: 40px;
+  left: 50px;
+}
+
+.eco-text {
+  width: 331px;
+  top: 70px;
+  right: 35px;
+}
+
+.eco-frd h2 {
+  font-size: 34px;
+  font-weight: 700;
+  color: #1096b5;
+  font-family: "Balsamiq Sans", sans-serif;
+  text-shadow: 5px 0px 0px #ffffff;
+}
+
+.eco-frd p {
+  font-family: "Comfortaa", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 22.4px;
+  color: #375259;
+}
+
+.eco-text button {
+  background-color: #ffe926;
+  font-family: "Comfortaa", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.pop-tit h2 {
+  font-family: "Balsamiq Sans", sans-serif;
+  font-size: 38px;
+  font-weight: 700;
+  color: #191919;
+}
+
+.pop-tit p {
+  font-family: "Comfortaa", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  color: #2d2d2d;
+}
