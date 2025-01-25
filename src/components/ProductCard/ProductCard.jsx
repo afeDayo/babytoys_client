@@ -1,19 +1,44 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FaStar } from "react-icons/fa";
 import "./ProductCard.css";
 
 const ProductCard = ({ topPick, poproduct }) => {
   const product = topPick || poproduct;
 
-  const [rating, setRating] = useState(product?.initialRating || 0);
+  const storeRatings = JSON.parse(localStorage.getItem("productRatings")) || {};
+
+  const initialRating =
+    storeRatings[product?.id] || product?.initialRating || 0;
+
+  const [rating, setRating] = useState(initialRating);
 
   const [hover, setHover] = useState(null);
 
-  const handleRating = (rate) => {
-    setRating(rate);
+  const [message, setMessage] = useState("");
 
-    console.log(`Rated product ${product?.name} with ${rate} stars`);
+  const handleRating = (rate) => {
+    try {
+      setRating(rate);
+
+      const updatedRatings = { ...storeRatings, [product.id]: rate };
+      localStorage.setItem("productRatings", JSON.stringify(updatedRatings));
+
+      console.log(`Rated product ${product?.name} with ${rate} stars`);
+      setMessage("Thank you for rating!");
+    } catch (err) {
+      setMessage("Failed to submit rating.");
+      console.error("Rating Error:", err);
+    }
   };
+
+  useEffect(() => {
+    const upToDateRatings =
+      JSON.parse(localStorage.getItem("productRatings")) || {};
+
+    if (upToDateRatings[product?.id]) {
+      setRating(upToDateRatings[product.id]);
+    }
+  }, [product?.id]);
 
   return (
     <div className="star-rating">
@@ -27,6 +52,7 @@ const ProductCard = ({ topPick, poproduct }) => {
           onClick={() => handleRating(star)}
         />
       ))}
+      {message && <p>{message}</p>}
     </div>
   );
 };

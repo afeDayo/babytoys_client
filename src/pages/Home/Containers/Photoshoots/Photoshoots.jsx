@@ -64,7 +64,7 @@ const Photoshoots = () => {
 
       {/* ========================= */}
 
-      <div className="newslet pt-5 mb-5 pb-3">
+      <div className="newslet pt-5 mb-5 pb-3 position-relative">
         <div className="news-tits mb-4">
           <h2>Newsletter</h2>
           <p>
@@ -83,7 +83,7 @@ const Photoshoots = () => {
           <button onClick={handleSubmit}>Join</button>
         </div>
 
-        {message && <p className="news-msg">{message}</p>}
+        {message && <p className="news-msg position-absolute">{message}</p>}
       </div>
     </div>
   );

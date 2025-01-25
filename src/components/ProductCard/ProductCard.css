@@ -18,3 +18,9 @@
   color: #f26c62;
   transform: scale(1.2);
 }
+
+.star-rating p {
+  margin-left: 10px;
+  color: green;
+  font-size: 14px;
+}
