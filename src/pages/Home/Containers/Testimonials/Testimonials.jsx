@@ -116,7 +116,7 @@ const Testimonials = () => {
   };
 
   return (
-    <div className="testi-con mb-5">
+    <div className="testi-con container mb-5">
       <div className="testi-tits">
         <h2 className="mb-1">Hear from Other Happy Parents</h2>
         <p className="mb-5">Customer testimonials</p>

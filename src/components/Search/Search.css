@@ -1,0 +1,29 @@
+.navinput {
+  width: 295px;
+  padding: 10px 20px;
+  border-radius: 26px;
+  border: 2px solid #d4d4d4;
+}
+
+.navinput::placeholder {
+  font-weight: 600;
+  color: #7f7f7f;
+}
+
+.cart-badge {
+  position: absolute;
+  top: 0px;
+  right: 338px;
+  background: #e3b110;
+  color: white;
+  border-radius: 50%;
+  padding: 3px 6px;
+  z-index: 2;
+}
+
+.cart-badge p {
+  font-family: "Poppins", serif;
+  font-weight: 800;
+  font-size: 10px;
+  color: #000000;
+}

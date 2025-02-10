@@ -1,0 +1,147 @@
+.proid-tit p {
+  font-size: 22px;
+  font-weight: 400;
+  font-family: "Balsamiq Sans", sans-serif;
+}
+
+.proid-tit p a {
+  color: #171717;
+}
+
+.proid-tit p span a {
+  color: #0f749d;
+}
+
+.low-proid {
+  gap: 68px;
+  padding-top: 20px;
+  padding-bottom: 80px;
+}
+
+.proid-img {
+  border: 1px solid #d4d4d4;
+  width: 620px;
+  height: 620px;
+}
+
+.proid-contents {
+  width: 560px;
+}
+
+.proid-img img {
+  width: 550px;
+  height: 550px;
+  object-fit: cover;
+}
+
+.related-tit h2 {
+  font-family: "Balsamiq Sans", sans-serif;
+  font-size: 38px;
+  font-weight: 700;
+  color: #191919;
+}
+
+.related-slide {
+  min-width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0px;
+  padding: 10px;
+}
+
+.related-card {
+  transition: transform 0.3s;
+  width: 295px;
+  height: 398px;
+  margin-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 21px;
+}
+
+.related-card:hover {
+  transform: scale(1.05);
+}
+
+.related-card img {
+  width: 220px;
+  height: 220px;
+}
+
+.related-img {
+  border: 2px solid #d4d4d4;
+  width: 295px;
+  height: 295px;
+  border-radius: 20px;
+}
+
+.rela-card {
+  gap: 12px;
+}
+
+.related-cart {
+  top: 17px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  right: 17px;
+}
+
+.related-pri {
+  gap: 6px;
+}
+
+.related-pri h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #191919;
+  font-family: "Comfortaa", sans-serif;
+  text-align: start;
+}
+
+.related-pri p {
+  font-family: "Poppins", serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #171717;
+}
+
+.click-cart div {
+  border: 2px solid #0f83b2;
+  width: 49px;
+  height: 47px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.proid-cart button {
+  font-family: "Comfortaa", sans-serif;
+  background-color: #0f83b2;
+  color: #f8f8f8;
+  font-weight: 600;
+}
+
+.proid-likez,
+.proid-sharez {
+  width: 60px;
+  height: 47px;
+  border: 1px solid #d4d4d4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.short-descrip,
+.proid-checkout {
+  border: 1px solid #d4d4d4;
+}
+
+.short-descrip div {
+  gap: 75px;
+}
+
+.desrev {
+  border: 1px solid #d4d4d4;
+}

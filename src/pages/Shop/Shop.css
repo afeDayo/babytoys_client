@@ -1,16 +1,42 @@
+@import url("https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap");
+
+.low-shoppers {
+  gap: 60px;
+}
+
+.shop-tit p {
+  font-size: 22px;
+  font-weight: 400;
+  font-family: "Balsamiq Sans", sans-serif;
+}
+
+.shop-tit p a {
+  color: #171717;
+}
+
+.shop-tit p span a {
+  color: #0f749d;
+}
+
+.main-shoppers h2 {
+  padding-left: 30px;
+}
+
 .product-grid {
-  width: 65%;
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   padding: 30px;
+  margin-bottom: 150px;
 }
 
 .each-card {
   transition: transform 0.3s;
   width: 295px;
   height: 398px;
-  margin-bottom: 60px;
+  margin-bottom: 32px;
   display: flex;
   flex-direction: column;
   align-items: start;
@@ -58,4 +84,178 @@
   font-size: 18px;
   font-weight: 600;
   color: #171717;
+}
+
+.pro-cat {
+  gap: 40px;
+  border: 1px solid #d4d4d4;
+  padding: 30px 10px;
+  border-radius: 15px;
+  width: 290px;
+}
+
+.pro-cat h3 {
+  font-family: "Balsamiq Sans", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  color: #2c2728;
+}
+
+.cate-dire p {
+  font-size: 16px;
+  font-weight: 700;
+  font-family: "Comfortaa", sans-serif;
+  color: #171717;
+}
+
+.cate-dire div.active-category p {
+  color: #0f83b2;
+}
+
+.cate-dire div.active-category .plus-icon {
+  color: #0f83b2;
+}
+
+.cate-dire div {
+  cursor: pointer;
+}
+
+.plus-icon {
+  font-size: 14.4px;
+  color: #5c5f62;
+}
+
+.main-shoppers h2 {
+  font-family: "Balsamiq Sans", sans-serif;
+  font-size: 38px;
+  font-weight: 700;
+  color: #191919;
+}
+
+.default-s p {
+  font-family: "Comfortaa", sans-serif;
+  font-size: 16.02px;
+  font-weight: 600;
+  color: #171717;
+}
+
+.show-res {
+  font-family: "Comfortaa", sans-serif;
+  font-size: 16.02px;
+  font-weight: 600;
+  color: #171717;
+}
+
+.filter-price {
+  border: 1px solid #d4d4d4;
+  padding: 30px 10px;
+  gap: 40px;
+  border-radius: 15px;
+  width: 290px;
+}
+
+.filter-price h3 {
+  font-family: "Balsamiq Sans", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  color: #2c2728;
+}
+
+.range-filter {
+  width: 260px;
+}
+
+.filter-price button {
+  border: none;
+  border-radius: 15px;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: "Comfortaa", sans-serif;
+  color: #ffffff;
+  background-color: #0f83b2;
+}
+
+.poor-con {
+  border: 1px solid #d4d4d4;
+  padding: 30px 10px;
+  gap: 40px;
+  border-radius: 15px;
+  width: 290px;
+}
+
+.poor-con h3 {
+  font-family: "Balsamiq Sans", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  color: #2c2728;
+}
+
+.default-s {
+  cursor: pointer;
+}
+
+.rotate-icon {
+  transform: rotate(180deg);
+}
+
+.catego-drop {
+  top: 30px;
+  left: -6px;
+  border: 1px solid #d4d4d4;
+  background-color: #ffffff;
+  z-index: 1;
+  width: 180px;
+}
+
+.catego-drop li {
+  transition: 0.3s ease-in-out;
+}
+
+.catego-drop li:hover {
+  background-color: #5c5f62;
+  color: #ffffff;
+}
+
+.page-no {
+  width: 244px;
+  bottom: -50px;
+  left: 38%;
+  right: 38%;
+}
+
+.page-no div {
+  border: 1px solid #d4d4d4;
+  border-radius: 50%;
+  width: 38.14px;
+  height: 38.14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.page-no div p {
+  margin: 0;
+  font-size: 15.26px;
+  font-weight: 600;
+  color: #222424;
+  font-family: "Comfortaa", sans-serif;
+}
+
+.page-no div.active-page {
+  background-color: #0f83b2;
+  border: none;
+}
+
+.page-no div.active-page p {
+  color: #ffffff;
+}
+
+.page-no div:hover {
+  background-color: #d4d4d4;
+}
+
+.page-no div img {
+  width: 16px;
+  height: 16px;
 }

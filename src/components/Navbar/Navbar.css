@@ -1,22 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap");
-
 nav {
   font-family: "Comfortaa", sans-serif;
 }
 
 .main-nav {
   gap: 110px;
-  padding: 50px 100px;
-}
-
-.navinput {
-  width: 295px;
-  padding: 10px 20px;
-  border-radius: 26px;
-  border: 2px solid #d4d4d4;
-}
-
-.navinput::placeholder {
-  font-weight: 600;
-  color: #7f7f7f;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }

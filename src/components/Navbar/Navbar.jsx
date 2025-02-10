@@ -18,18 +18,10 @@ const Navbar = () => {
           </div>
 
           <div className="d-md-flex align-items-md-center gap-md-5">
-            <Link
-              to="login"
-              className="text-decoration-none text-light"
-              href="#"
-            >
+            <Link to="/login" className="text-decoration-none text-light">
               Login{" "}
             </Link>
-            <Link
-              to="/register"
-              className="text-decoration-none text-light"
-              href="#"
-            >
+            <Link to="/register" className="text-decoration-none text-light">
               Register
             </Link>
           </div>
@@ -38,7 +30,7 @@ const Navbar = () => {
 
       {/* ============================================================== */}
 
-      <div className="main-nav d-flex align-items-center justify-content-center my-3">
+      <div className="main-nav container d-flex align-items-center justify-content-center my-3">
         <Link to="/">
           <img src={navLogo} alt="" />
         </Link>
@@ -59,11 +51,11 @@ const Navbar = () => {
             Shop
           </Link>
           <Link
-            to="/product"
+            to="/likes"
             className="text-decoration-none p-2 fw-bold text-dark"
             href=""
           >
-            Pages
+            Likes
           </Link>
           <Link
             to="/blog"

@@ -1,12 +1,13 @@
+// src/pages/Log/Login.jsx
 import React, { useState } from "react";
 import "./Login.css";
 import { Link } from "react-router-dom";
-import axios from "../../api/axios";
+import { useAuth } from "../../context/AuthContext";
 
 const Login = () => {
   const [formData, setFormData] = useState({ email: "", password: "" });
-
   const [error, setError] = useState("");
+  const { login } = useAuth(); // Get the login function from the AuthContext
 
   const handleChange = (event) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
@@ -14,17 +15,11 @@ const Login = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-
     try {
-      const response = await axios.post("/api/auth/login", formData);
-
-      const { token } = response.data;
-
-      localStorage.setItem("authToken", token);
-
+      await login(formData); // Call the context's login function
       setError("");
-
-      alert("Login successfull");
+      alert("Login successful");
+      // Optionally, redirect the user after login here.
     } catch (err) {
       setError(err.response?.data?.message || "Login failed");
     }
@@ -33,9 +28,8 @@ const Login = () => {
   return (
     <div className="signin">
       {error && <p style={{ color: "red" }}>{error}</p>}
-
-      <form onSubmit={handleSubmit} className="in-form" action="">
-        <h1 className="in-title">Register</h1>
+      <form onSubmit={handleSubmit} className="in-form">
+        <h1 className="in-title">Login</h1>
         <div className="in-input">
           <input
             type="email"
@@ -45,7 +39,6 @@ const Login = () => {
             onChange={handleChange}
             required
           />
-
           <input
             type="password"
             name="password"
@@ -56,7 +49,6 @@ const Login = () => {
           />
           <button type="submit">Login to your account</button>
         </div>
-
         <div className="dont">
           <p className="mb-0">Don't have an account?</p>
           <Link to="/register">Register</Link>

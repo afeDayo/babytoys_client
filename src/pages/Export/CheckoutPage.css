@@ -1,0 +1,228 @@
+.checkpage-tit p {
+  font-size: 22px;
+  font-weight: 400;
+  font-family: "Balsamiq Sans", sans-serif;
+}
+
+.checkpage-con h3 {
+  font-family: "Balsamiq Sans", sans-serif;
+  font-size: 28px;
+  font-weight: 400;
+  color: #191919;
+}
+
+.checkpage-tit p a {
+  color: #171717;
+}
+
+.checkpage-tit p span a {
+  color: #0f749d;
+}
+
+.checkpage-low h2 {
+  font-size: 38px;
+  font-weight: 700;
+  color: #191919;
+  font-family: "Balsamiq Sans", sans-serif;
+}
+
+.delpayou {
+  gap: 64px;
+}
+
+.orderc-img {
+  width: 95.31px;
+  height: 95.31px;
+  border: 1px solid #d4d4d4;
+}
+
+.orderc-img img {
+  width: 75px;
+}
+
+.deliv,
+.payme {
+  padding: 30px 20px;
+  border: 1px solid #d4d4d4;
+  gap: 40px;
+}
+
+.deliv-form {
+  gap: 30px;
+  width: 610px;
+}
+
+.delform-one,
+.delform-three,
+.delform-four,
+.abou-car {
+  gap: 20px;
+}
+
+.delform-one input,
+.delform-two input,
+.delform-three input,
+.delform-four input,
+.delform-five input,
+.delform-six textarea,
+.car-nom {
+  border: 2px solid #d4d4d4;
+}
+
+.delform-one input::placeholder,
+.delform-two input::placeholder,
+.delform-three input::placeholder,
+.delform-four input::placeholder,
+.delform-five input::placeholder,
+.delform-six textarea::placeholder,
+.car-nom::placeholder {
+  font-size: 16px;
+  font-weight: 600;
+  font-family: "Comfortaa", sans-serif;
+  color: #7f7f7f;
+}
+
+.delform-one label,
+.delform-two label,
+.delform-three label,
+.delform-four label,
+.delform-five label,
+.delform-six label {
+  font-family: "Comfortaa", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #191919;
+}
+
+.payme-both {
+  gap: 20px;
+}
+
+.payme-tit p {
+  font-family: "Comfortaa", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #2d2d2d;
+}
+
+.credit-ca {
+  gap: 26px;
+}
+
+.credit-aldiv {
+  width: 569px;
+}
+
+.credit-al {
+  padding: 20px 0;
+}
+
+.rad-cre input {
+  width: 10px;
+  height: 10px;
+}
+
+.rad-cre label {
+  font-family: "Comfortaa", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #000000;
+}
+
+.card-cre {
+  gap: 12px;
+}
+
+.chebo-one label {
+  font-family: "Comfortaa", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #2d2d2d;
+}
+
+.payme button {
+  padding: 16px 0;
+  background-color: #0f83b2;
+  font-family: "Comfortaa", sans-serif;
+  border: none;
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.youror {
+  width: 528px;
+  border-radius: 14.3;
+  border: 1px solid #d4d4d4;
+  padding: 19.06px 30px;
+}
+
+.ylist-each {
+  border-bottom: 1px solid #d4d4d4;
+  padding: 30px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.orderc-one {
+  gap: 19.06px;
+  width: 343px;
+}
+
+.orderc-one h4 {
+  font-family: "Comfortaa", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #191919;
+}
+
+.orderc-one p {
+  font-family: "Comfortaa", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #2d2d2d;
+}
+
+.orderc-inf {
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.ylist-pri {
+  color: #191919;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: "Poppins", serif;
+}
+
+.checko-cal {
+  border-bottom: 1px solid #d4d4d4;
+  padding: 30px 0;
+}
+
+.che-tot h4 {
+  font-family: "Comfortaa", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #191919;
+}
+
+.checko-cal p {
+  font-family: "Poppins", serif;
+  font-size: 15.25px;
+  font-weight: 500;
+  color: #191919;
+}
+
+.che-tot {
+  gap: 20px;
+}
+
+.allin-all p {
+  font-family: "Poppins", serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #191919;
+}

@@ -15,7 +15,7 @@ const Collections = () => {
   };
 
   return (
-    <div className="catego my-3 d-flex flex-column">
+    <div className="catego container my-3 d-flex flex-column">
       <div className="ftpt">
         <h2>Find the Perfect Toy</h2>
         <p>Our Collections</p>

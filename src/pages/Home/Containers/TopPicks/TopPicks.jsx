@@ -212,7 +212,7 @@ const TopPicks = () => {
   };
 
   return (
-    <div className="caro-con d-flex mb-3 flex-column align-items-center">
+    <div className="caro-con container d-flex mb-3 flex-column align-items-center">
       <div className="caro-but d-flex flex-column align-items-center gap-5">
         <h2>Top picks for your little ones</h2>
         <div className="carousel-buttons d-flex align-items-center">
@@ -274,7 +274,7 @@ const TopPicks = () => {
                 <div className="loo-card d-flex flex-column align-items-start justify-content-start">
                   <div className="nam-pri d-flex flex-column align-items-start justify-content-start">
                     <h3 className="m-0">{topPick.name}</h3>
-                    <p className="m-0">{topPick.price}</p>
+                    <p className="m-0">₦{topPick.price.toLocaleString()}</p>
                   </div>
                   <ProductCard key={topPick.id} topPick={topPick} />
                 </div>

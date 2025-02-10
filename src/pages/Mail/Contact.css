@@ -58,6 +58,7 @@
   width: 502px;
   border: 2px solid #d4d4d4;
   font-family: "Comfortaa", sans-serif;
+  resize: none;
 }
 
 .con-inp input::placeholder,
@@ -71,6 +72,7 @@
   color: #e3f5fc;
   font-weight: 700;
   font-family: "Comfortaa", sans-serif;
+  width: 100px;
 }
 
 .con-form h3 {

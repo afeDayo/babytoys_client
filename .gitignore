@@ -25,4 +25,4 @@ dist-ssr
 
 # Ignore entire directories
 node_modules/
-src/assets/Images/
+

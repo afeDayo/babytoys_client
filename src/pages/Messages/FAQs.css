@@ -38,15 +38,15 @@
   color: #191919;
 }
 
-.arcodion .faq-para {
+/* .arcodion .faq-para {
   max-height: 0;
   overflow: hidden;
   transition: max-height 3s ease-out;
-}
+} */
 
-.arcodion .arco-item.active .faq-para {
+/* .arcodion .arco-item.active .faq-para {
   max-height: 200px;
-}
+} */
 
 .faq-click {
   cursor: pointer;

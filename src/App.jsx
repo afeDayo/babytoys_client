@@ -14,31 +14,39 @@ import Login from "./pages/Log/Login";
 import Error from "./pages/Error/Error";
 import RootLayout from "./layout/RootLayout";
 import AuthLayout from "./layout/AuthLayout";
+import LikesPage from "./pages/Views/LikesPage";
+import { CartProvider } from "./context/CartContext";
+import { AuthProvider } from "./context/AuthContext";
 
 function App() {
   return (
     <>
-      <Router>
-        <Routes>
-          <Route element={<RootLayout />}>
-            <Route path="/" element={<Homepage />} />
-            <Route path="/shop" element={<Shop />} />
-            <Route path="/product/:id" element={<ProductPage />} />
-            <Route path="/cart" element={<ShoppingCart />} />
-            <Route path="/checkout" element={<CheckoutPage />} />
-            <Route path="/blog" element={<Blog />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/faq" element={<FAQs />} />
-          </Route>
+      <AuthProvider>
+        <CartProvider>
+          <Router>
+            <Routes>
+              <Route element={<RootLayout />}>
+                <Route path="/" element={<Homepage />} />
+                <Route path="/shop" element={<Shop />} />
+                <Route path="/likes" element={<LikesPage />} />
+                <Route path="/product/:id" element={<ProductPage />} />
+                <Route path="/cart" element={<ShoppingCart />} />
+                <Route path="/checkout" element={<CheckoutPage />} />
+                <Route path="/blog" element={<Blog />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/faq" element={<FAQs />} />
+              </Route>
 
-          <Route element={<AuthLayout />}>
-            <Route path="/register" element={<Register />} />
-            <Route path="/login" element={<Login />} />
-          </Route>
+              <Route element={<AuthLayout />}>
+                <Route path="/register" element={<Register />} />
+                <Route path="/login" element={<Login />} />
+              </Route>
 
-          <Route path="*" element={<Error />} />
-        </Routes>
-      </Router>
+              <Route path="*" element={<Error />} />
+            </Routes>
+          </Router>
+        </CartProvider>
+      </AuthProvider>
     </>
   );
 }

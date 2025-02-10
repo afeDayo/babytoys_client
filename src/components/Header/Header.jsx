@@ -14,7 +14,7 @@ const Header = () => {
             Crafting smiles with every toy, made for learning, fun, and growth
           </p>
         </div>
-        <Link to="/shop" className="text-decoration-none" href="#">
+        <Link to="/shop" className="text-decoration-none">
           Shop now
         </Link>
       </div>

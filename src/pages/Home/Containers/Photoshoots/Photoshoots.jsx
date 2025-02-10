@@ -33,7 +33,7 @@ const Photoshoots = () => {
         setEmail("");
       }
     } catch (error) {
-      console.error("Errorsubscribing to newsletter:", error);
+      console.error("Error subscribing to newsletter:", error);
       setMessage("Failed to subscribe. Please try again later.");
     }
   };

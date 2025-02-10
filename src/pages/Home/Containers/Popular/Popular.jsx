@@ -44,7 +44,7 @@ const popularProducts = [
 
 const Popular = () => {
   return (
-    <div className="popular-con">
+    <div className="popular-con container">
       <div className="d-flex align-items-center gap-3 mb-5">
         <div className="position-relative">
           <img className="position-relative" src={play} alt="" />
@@ -94,7 +94,7 @@ const Popular = () => {
               <div className="loopop-card d-flex flex-column align-items-start justify-content-start">
                 <div className="nampop-pri d-flex flex-column align-items-start justify-content-start">
                   <h3 className="m-0">{poproduct.name}</h3>
-                  <p className="m-0">{poproduct.price}</p>
+                  <p className="m-0">{poproduct.price.toLocaleString()}</p>
                 </div>
               </div>
               <ProductCard key={poproduct.id} poproduct={poproduct} />

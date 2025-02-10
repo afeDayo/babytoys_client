@@ -1,7 +1,8 @@
+// src/pages/Secure/Register.jsx
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Register.css";
-import axios from "../../api/axios";
+import { useAuth } from "../../context/AuthContext";
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -9,10 +10,9 @@ const Register = () => {
     password: "",
     repeatPassword: "",
   });
-
   const [error, setError] = useState("");
-
   const [success, setSuccess] = useState("");
+  const { register } = useAuth(); // Get the register function from the AuthContext
 
   const handleChange = (event) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
@@ -20,12 +20,9 @@ const Register = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-
     try {
-      const response = await axios.post("/api/auth/signup", formData);
-
-      setSuccess("Registration successfull Please log in.");
-
+      await register(formData);
+      setSuccess("Registration successful. Please log in.");
       setError("");
     } catch (err) {
       setError(err.response?.data?.message || "Registration failed");
@@ -33,12 +30,10 @@ const Register = () => {
   };
 
   return (
-    <div className="signup">
+    <div className="signup mt-5">
       {error && <p style={{ color: "red" }}>{error}</p>}
-
       {success && <p style={{ color: "green" }}>{success}</p>}
-
-      <form onSubmit={handleSubmit} className="up-form" action="">
+      <form onSubmit={handleSubmit} className="up-form">
         <h1 className="up-title">Register</h1>
         <div className="up-input">
           <input
@@ -49,7 +44,6 @@ const Register = () => {
             onChange={handleChange}
             required
           />
-
           <input
             type="password"
             name="password"
@@ -58,7 +52,6 @@ const Register = () => {
             onChange={handleChange}
             required
           />
-
           <input
             type="password"
             name="repeatPassword"
@@ -67,10 +60,8 @@ const Register = () => {
             onChange={handleChange}
             required
           />
-
           <button type="submit">Create an account</button>
         </div>
-
         <div className="already">
           <p className="mb-0">Already have an account?</p>
           <Link to="/login">Login</Link>

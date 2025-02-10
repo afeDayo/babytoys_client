@@ -5,8 +5,6 @@
   padding-top: 80px;
   padding-bottom: 50px;
   gap: 60px;
-  padding-left: 100px;
-  padding-right: 100px;
 }
 
 .ftpt {
@@ -42,4 +40,13 @@
   font-weight: 700;
   color: #171717;
   font-family: "Comfortaa", sans-serif;
+}
+
+.gory {
+  transition: transform 0.3s ease;
+}
+
+.gory:hover {
+  transform: translateY(-5px);
+  cursor: pointer;
 }
