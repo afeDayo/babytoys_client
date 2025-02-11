@@ -12,7 +12,7 @@ const popularProducts = [
   {
     id: 4,
     name: "Natural Rubber Teething Ring",
-    image: "../../../../../public/toy4.png",
+    image: "/toy4.png",
     price: "₦13,000",
     initialRating: 0,
   },
@@ -20,7 +20,7 @@ const popularProducts = [
   {
     id: 16,
     name: "Superhero Playset",
-    image: "../../../../../public/toy16.png",
+    image: "/toy16.png",
     price: "₦40,000",
     initialRating: 0,
   },
@@ -28,8 +28,7 @@ const popularProducts = [
   {
     id: 23,
     name: "Shape Sorter Toy",
-    image: "../../../../../src/assets/Images/toy23.png",
-    image: "../../../../../public/toy23.png",
+    image: "/toy23.png",
     price: "₦13,000",
     initialRating: 0,
   },
@@ -37,7 +36,7 @@ const popularProducts = [
   {
     id: 11,
     name: "Space Explorer Playset",
-    image: "../../../../../public/toy11.png",
+    image: "/toy11.png",
     price: "₦67,200",
     initialRating: 0,
   },

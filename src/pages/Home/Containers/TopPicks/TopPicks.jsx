@@ -9,7 +9,7 @@ const topPicks = {
     {
       id: 1,
       name: "Dollhouse Furniture Set",
-      image: "../../../../../public/toy1.png",
+      image: "/toy1.png", // Changed to absolute path
       price: "₦64,000",
       initialRating: 0,
     },
@@ -17,7 +17,7 @@ const topPicks = {
     {
       id: 2,
       name: "Remote Control Police Car",
-      image: "../../../../../public/toy2.png",
+      image: "/toy2.png",
       price: "₦48,000",
       initialRating: 0,
     },
@@ -25,7 +25,7 @@ const topPicks = {
     {
       id: 3,
       name: "Abacus Counting Frame",
-      image: "../../../../../public/toy3.png",
+      image: "/toy3.png",
       price: "₦14,000",
       initialRating: 0,
     },
@@ -33,7 +33,7 @@ const topPicks = {
     {
       id: 4,
       name: "Natural Rubber Teething Ring",
-      image: "../../../../../public/toy4.png",
+      image: "/toy4.png",
       price: "₦13,000",
       initialRating: 0,
     },
@@ -41,7 +41,7 @@ const topPicks = {
     {
       id: 5,
       name: "Stuffed Monkey Toy",
-      image: "../../../../../public/toy5.png",
+      image: "/toy5.png",
       price: "₦17,100",
       initialRating: 0,
     },
@@ -49,7 +49,7 @@ const topPicks = {
     {
       id: 6,
       name: "Viking Ship Playset",
-      image: "../../../../../public/toy6.png",
+      image: "/toy6.png",
       price: "₦89,600",
       initialRating: 0,
     },
@@ -57,7 +57,7 @@ const topPicks = {
     {
       id: 7,
       name: "RC Bulldozer",
-      image: "../../../../../public/toy7.png",
+      image: "/toy7.png",
       price: "₦66,000",
       initialRating: 0,
     },
@@ -65,7 +65,7 @@ const topPicks = {
     {
       id: 8,
       name: "Puzzle Map of Nigeria",
-      image: "../../../../../public/toy8.png",
+      image: "/toy8.png",
       price: "₦25,000",
       initialRating: 0,
     },
@@ -75,7 +75,7 @@ const topPicks = {
     {
       id: 9,
       name: "Recycled Paper Coloring Book",
-      image: "../../../../../public/toy9.png",
+      image: "/toy9.png",
       price: "₦2,500",
       initialRating: 0,
     },
@@ -83,7 +83,7 @@ const topPicks = {
     {
       id: 10,
       name: "Cuddly Bear with Heart",
-      image: "../../../../../public/toy10.png",
+      image: "/toy10.png",
       price: "₦19,200",
       initialRating: 0,
     },
@@ -91,7 +91,7 @@ const topPicks = {
     {
       id: 11,
       name: "Space Explorer Playset",
-      image: "../../../../../public/toy11.png",
+      image: "/toy11.png",
       price: "₦67,200",
       initialRating: 0,
     },
@@ -99,7 +99,7 @@ const topPicks = {
     {
       id: 12,
       name: "RC Quad Bike",
-      image: "../../../../../public/toy12.png",
+      image: "/toy12.png",
       price: "₦24,500",
       initialRating: 0,
     },
@@ -107,7 +107,7 @@ const topPicks = {
     {
       id: 13,
       name: "Learning Laptop Toy",
-      image: "../../../../../public/toy13.png",
+      image: "/toy13.png",
       price: "₦75,000",
       initialRating: 0,
     },
@@ -115,7 +115,7 @@ const topPicks = {
     {
       id: 14,
       name: "Eco-Friendly Drum Set",
-      image: "../../../../../public/toy14.png",
+      image: "/toy14.png",
       price: "₦22,000",
       initialRating: 0,
     },
@@ -123,7 +123,7 @@ const topPicks = {
     {
       id: 15,
       name: "Stuffed Unicorn Toy",
-      image: "../../../../../public/toy15.png",
+      image: "/toy15.png",
       price: "₦19,500",
       initialRating: 0,
     },
@@ -131,7 +131,7 @@ const topPicks = {
     {
       id: 16,
       name: "Superhero Playset",
-      image: "../../../../../public/toy16.png",
+      image: "/toy16.png",
       price: "₦40,000",
       initialRating: 0,
     },
@@ -141,7 +141,7 @@ const topPicks = {
     {
       id: 17,
       name: "Remote Control Racing Car",
-      image: "../../../../../public/toy17.png",
+      image: "/toy17.png",
       price: "₦57,500",
       initialRating: 0,
     },
@@ -149,7 +149,7 @@ const topPicks = {
     {
       id: 18,
       name: "Alphabet Blocks",
-      image: "../../../../../public/toy18.png",
+      image: "/toy18.png",
       price: "₦13,500",
       initialRating: 0,
     },
@@ -157,7 +157,7 @@ const topPicks = {
     {
       id: 19,
       name: "Bamboo Stacking Rings",
-      image: "../../../../../public/toy19.png",
+      image: "/toy19.png",
       price: "₦13,500",
       initialRating: 0,
     },
@@ -165,7 +165,7 @@ const topPicks = {
     {
       id: 20,
       name: "Huggable Whale Plush",
-      image: "../../../../../public/toy20.png",
+      image: "/toy20.png",
       price: "₦28,600",
       initialRating: 0,
     },
@@ -173,7 +173,7 @@ const topPicks = {
     {
       id: 21,
       name: "Wooden Train Station Set",
-      image: "../../../../../public/toy21.png",
+      image: "/toy21.png",
       price: "₦156,000",
       initialRating: 0,
     },
@@ -181,7 +181,7 @@ const topPicks = {
     {
       id: 22,
       name: "RC Robot Toy",
-      image: "../../../../../public/toy22.png",
+      image: "/toy22.png",
       price: "₦62,500",
       initialRating: 0,
     },
@@ -189,7 +189,7 @@ const topPicks = {
     {
       id: 23,
       name: "Shape Sorter Toy",
-      image: "../../../../../public/toy23.png",
+      image: "/toy23.png",
       price: "₦13,000",
       initialRating: 0,
     },
@@ -197,7 +197,7 @@ const topPicks = {
     {
       id: 24,
       name: "Handcrafted Wooden Animal Set",
-      image: "../../../../../public/toy24.png",
+      image: "/toy24.png",
       price: "₦18,000",
       initialRating: 0,
     },
@@ -224,7 +224,6 @@ const TopPicks = () => {
           >
             Featured
           </button>
-
           <button
             className={`carousel-btn ${
               activePick === "bestSellers" ? "active" : ""
@@ -233,7 +232,6 @@ const TopPicks = () => {
           >
             Best seller
           </button>
-
           <button
             className={`carousel-btn ${
               activePick === "newArrivals" ? "active" : ""
