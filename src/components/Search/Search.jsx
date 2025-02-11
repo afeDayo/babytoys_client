@@ -1,8 +1,8 @@
 // src/components/Search/Search.jsx
 import React from "react";
 import { Link } from "react-router-dom";
-import navCart from "../../assets/Images/CartMajor.png";
-import navSearch from "../../assets/Images/navsearch.png";
+import navCart from "../../../public/CartMajor.png";
+import navSearch from "../../../public/navsearch.png";
 import "./Search.css";
 import { useCart } from "../../context/CartContext";
 import { useAuth } from "../../context/AuthContext";

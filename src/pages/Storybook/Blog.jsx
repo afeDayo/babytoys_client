@@ -1,17 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import navSearch from "../../assets/Images/navsearch.png";
+import navSearch from "../../../public/navsearch.png";
 import "./Blog.css";
 import { FaPlus } from "react-icons/fa";
-import blogpone from "../../assets/Images/Rectangle 60.png";
-import blogptwo from "../../assets/Images/Rectangle 61.png";
-import blogpthree from "../../assets/Images/Rectangle 62.png";
-import pinkposter from "../../assets/Images/Rectangle 64.png";
-import blogimg1 from "../../assets/Images/blog1.png";
-import blogimg2 from "../../assets/Images/blog2.png";
-import blogimg3 from "../../assets/Images/blog3.png";
-import blogimg4 from "../../assets/Images/blog4.png";
-import blogdate from "../../assets/Images/blogdate.png";
+import blogpone from "../../../public/Rectangle 60.png";
+import blogptwo from "../../../public/Rectangle 61.png";
+import blogpthree from "../../../public/Rectangle 62.png";
+import pinkposter from "../../../public/Rectangle 64.png";
+import blogimg1 from "../../../public/blog1.png";
+import blogimg2 from "../../../public/blog2.png";
+import blogimg3 from "../../../public/blog3.png";
+import blogimg4 from "../../../public/blog4.png";
+import blogdate from "../../../public/blogdate.png";
 
 const Blog = () => {
   return (

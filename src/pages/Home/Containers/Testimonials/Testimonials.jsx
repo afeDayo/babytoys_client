@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Testimonials.css";
-import leftArr from "../../../../assets/Images/lefty.png";
-import rightArr from "../../../../assets/Images/righty.png";
+import leftArr from "../../../../../public/lefty.png";
+import rightArr from "../../../../../public/righty.png";
 
 const testimonials = [
   {

@@ -4,9 +4,9 @@ import baby1 from "../../../../assets/Images/cute-black-baby-home-with-parents.j
 import baby2 from "../../../../assets/Images/360_F_646022815_bchEmRaiiAJMd7pP1snPrALSGmO5su58.jpg";
 import baby3 from "../../../../assets/Images/childrens-toy.jpg";
 import baby4 from "../../../../assets/Images/360_F_626691700_U9LJF9kMZIYomniMToURLROI0jKPQ5oP.jpg";
-import frame1 from "../../../../assets/Images/Frame 89.png";
-import frame2 from "../../../../assets/Images/Frame 90.png";
-import frame3 from "../../../../assets/Images/Frame 91.png";
+import frame1 from "../../../../../public/Frame 89.png";
+import frame2 from "../../../../../public/Frame 90.png";
+import frame3 from "../../../../../public/Frame 91.png";
 import axios from "../../../../api/axios";
 
 const Photoshoots = () => {

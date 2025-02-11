@@ -3,16 +3,16 @@ import "./Popular.css";
 import { FaRegHeart } from "react-icons/fa";
 import { FiShoppingCart } from "react-icons/fi";
 import ProductCard from "../../../../components/ProductCard/ProductCard";
-import play from "../../../../assets/Images/Rectangle 15.png";
-import innerPlay from "../../../../assets/Images/Vector.png";
-import ecofrd from "../../../../assets/Images/Rectangle 16.png";
+import play from "../../../../../public/Rectangle 15.png";
+import innerPlay from "../../../../../public/Vector.png";
+import ecofrd from "../../../../../public/Rectangle 16.png";
 import { Link } from "react-router-dom";
 
 const popularProducts = [
   {
     id: 4,
     name: "Natural Rubber Teething Ring",
-    image: "../../../../../src/assets/Images/toy4.png",
+    image: "../../../../../public/toy4.png",
     price: "₦13,000",
     initialRating: 0,
   },
@@ -20,7 +20,7 @@ const popularProducts = [
   {
     id: 16,
     name: "Superhero Playset",
-    image: "../../../../../src/assets/Images/toy16.png",
+    image: "../../../../../public/toy16.png",
     price: "₦40,000",
     initialRating: 0,
   },
@@ -29,6 +29,7 @@ const popularProducts = [
     id: 23,
     name: "Shape Sorter Toy",
     image: "../../../../../src/assets/Images/toy23.png",
+    image: "../../../../../public/toy23.png",
     price: "₦13,000",
     initialRating: 0,
   },
@@ -36,7 +37,7 @@ const popularProducts = [
   {
     id: 11,
     name: "Space Explorer Playset",
-    image: "../../../../../src/assets/Images/toy11.png",
+    image: "../../../../../public/toy11.png",
     price: "₦67,200",
     initialRating: 0,
   },

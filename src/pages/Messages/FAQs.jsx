@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./FAQs.css";
-import pluss from "../../assets/Images/plus.png";
-import minuss from "../../assets/Images/minus.png";
+import pluss from "../../../public/plus.png";
+import minuss from "../../../public/minus.png";
 
 const FAQs = () => {
   // State to track which accordion is active

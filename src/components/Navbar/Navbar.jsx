@@ -1,7 +1,7 @@
 import React from "react";
-import navLogo from "../../assets/Images/image 2.png";
-import blueTop from "../../assets/Images/Union.png";
-import delivery from "../../assets/Images/Free Shipping.png";
+import navLogo from "../../../public/image 2.png";
+import blueTop from "../../../public/Union.png";
+import delivery from "../../../public/Free Shipping.png";
 import "./Navbar.css";
 import { Link } from "react-router-dom";
 import Search from "../Search/Search";

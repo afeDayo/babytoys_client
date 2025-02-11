@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, Outlet } from "react-router-dom";
-import reglogo from "../assets/Images/image 2.png";
+import reglogo from "../../public/image 2.png";
 
 const AuthLayout = () => {
   return (

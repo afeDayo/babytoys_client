@@ -1,11 +1,11 @@
 import React from "react";
 import "./Footer.css";
-import footimg from "../../assets/Images/foooootimg.png";
-import footlogo from "../../assets/Images/footlogo.png";
-import ig from "../../assets/Images/ig.png";
-import x from "../../assets/Images/x.png";
-import fb from "../../assets/Images/fb.png";
-import pin from "../../assets/Images/pin.png";
+import footimg from "../../../public/foooootimg.png";
+import footlogo from "../../../public/footlogo.png";
+import ig from "../../../public/ig.png";
+import x from "../../../public/x.png";
+import fb from "../../../public/fb.png";
+import pin from "../../../public/pin.png";
 import { Link } from "react-router-dom";
 
 const Footer = () => {

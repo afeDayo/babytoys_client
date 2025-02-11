@@ -2,9 +2,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./ShoppingCart.css";
-import deletecart from "../../assets/Images/deletecart.png";
-import outcart from "../../assets/Images/miiinus.png";
-import intocart from "../../assets/Images/plusssss.png";
+import deletecart from "../../../public/deletecart.png";
+import outcart from "../../../public/miiinus.png";
+import intocart from "../../../public/plusssss.png";
 import { useCart } from "../../context/CartContext";
 import { useAuth } from "../../context/AuthContext";
 

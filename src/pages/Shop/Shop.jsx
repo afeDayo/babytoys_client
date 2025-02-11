@@ -8,13 +8,12 @@ import { FiShoppingCart } from "react-icons/fi";
 import ProductRating from "../../components/ProductRating/ProductRating";
 import { FaPlus } from "react-icons/fa6";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
-import filterPrice from "../../assets/Images/Group 59.png";
-import starsR from "../../assets/Images/Frame 53.png";
-import donkeyT from "../../assets/Images/image 6 1.png";
-import stack from "../../assets/Images/play set 2.png";
-import bicycle from "../../assets/Images/image 14 1.png";
-import leftaro from "../../assets/Images/Primary fill.png";
-import rightaro from "../../assets/Images/Primary fill2.png";
+import starsR from "../../../public/Frame 53.png";
+import donkeyT from "../../../public/image 6 1.png";
+import stack from "../../../public/play set 2.png";
+import bicycle from "../../../public/image 14 1.png";
+import leftaro from "../../../public/Primary fill.png";
+import rightaro from "../../../public/Primary fill2.png";
 import { useCart } from "../../context/CartContext";
 import { useAuth } from "../../context/AuthContext"; // Import the AuthContext
 

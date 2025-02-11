@@ -1,10 +1,10 @@
 import React from "react";
 import "./Contact.css";
 import { Link } from "react-router-dom";
-import iconPhone from "../../assets/Images/phone.png";
-import iconMail from "../../assets/Images/envelope.png";
-import iconLocate from "../../assets/Images/locate.png";
-import mapImg from "../../assets/Images/map.png";
+import iconPhone from "../../../public/phone.png";
+import iconMail from "../../../public/envelope.png";
+import iconLocate from "../../../public/locate.png";
+import mapImg from "../../../public/map.png";
 
 const Contact = () => {
   return (

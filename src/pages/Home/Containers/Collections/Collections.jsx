@@ -1,11 +1,11 @@
 import React from "react";
 import "./Collections.css";
 import { useNavigate } from "react-router-dom";
-import play from "../../../../assets/Images/Isolation_Mode.png";
-import control from "../../../../assets/Images/Isolation_car.png";
-import education from "../../../../assets/Images/Isolation_ABC.png";
-import eco from "../../../../assets/Images/Isolation_Horse.png";
-import stuffed from "../../../../assets/Images/Isolation_teddy.png";
+import play from "../../../../../public/Isolation_Mode.png";
+import control from "../../../../../public/Isolation_car.png";
+import education from "../../../../../public/Isolation_ABC.png";
+import eco from "../../../../../public/Isolation_Horse.png";
+import stuffed from "../../../../../public/Isolation_teddy.png";
 
 const Collections = () => {
   const navigate = useNavigate();

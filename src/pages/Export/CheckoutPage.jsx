@@ -14,15 +14,12 @@ import { loadStripe } from "@stripe/stripe-js";
 import axios from "../../api/axios";
 import { useCart } from "../../context/CartContext";
 import { useAuth } from "../../context/AuthContext";
-import visac from "../../assets/Images/Visa.png";
-import massterc from "../../assets/Images/MasterCard.png";
-import dizzcoc from "../../assets/Images/Discover Card.png";
-import unionnc from "../../assets/Images/UnionPay.png";
-import americac from "../../assets/Images/American Express.png";
-import paypal from "../../assets/Images/Logo paypal.png";
-import tooyc1 from "../../assets/Images/toy4.png";
-import tooyc2 from "../../assets/Images/toy16.png";
-import tooyc3 from "../../assets/Images/toy23.png";
+import visac from "../../../public/Visa.png";
+import massterc from "../../../public/MasterCard.png";
+import dizzcoc from "../../../public/Discover Card.png";
+import unionnc from "../../../public/UnionPay.png";
+import americac from "../../../public/American Express.png";
+import paypal from "../../../public/Logo paypal.png";
 
 // Load Stripe using your public key from your environment
 const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLIC_KEY);

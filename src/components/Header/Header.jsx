@@ -1,6 +1,6 @@
 import React from "react";
 import "./Header.css";
-import headerImg from "../../assets/Images/Rectangle 40.png";
+import headerImg from "../../../public/Rectangle 40.png";
 import { Link } from "react-router-dom";
 
 const Header = () => {
