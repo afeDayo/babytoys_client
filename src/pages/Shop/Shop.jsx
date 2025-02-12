@@ -1,9 +1,8 @@
-// src/pages/Shop/Shop.jsx
 import React, { useEffect, useState } from "react";
 import axios from "../../api/axios";
 import { Link, useLocation } from "react-router-dom";
 import "./Shop.css";
-import { FaRegHeart } from "react-icons/fa";
+import { FaRegHeart, FaHeart } from "react-icons/fa";
 import { FiShoppingCart } from "react-icons/fi";
 import ProductRating from "../../components/ProductRating/ProductRating";
 import { FaPlus } from "react-icons/fa6";
@@ -15,7 +14,7 @@ import bicycle from "../../../public/image 14 1.png";
 import leftaro from "../../../public/Primary fill.png";
 import rightaro from "../../../public/Primary fill2.png";
 import { useCart } from "../../context/CartContext";
-import { useAuth } from "../../context/AuthContext"; // Import the AuthContext
+import { useAuth } from "../../context/AuthContext";
 
 const categories = [
   "All Categories",
@@ -49,8 +48,11 @@ const Shop = () => {
 
   const [currentPage, setCurrentPage] = useState(1);
 
+  // Local state to track liked products (object: { [productId]: true/false })
+  const [likedItems, setLikedItems] = useState({});
+
   const { addToCart } = useCart();
-  const { user } = useAuth(); // Retrieve authentication status
+  const { user } = useAuth();
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -85,17 +87,35 @@ const Shop = () => {
     }
   }, [category]);
 
+  // Updated useEffect: Only run if user exists and has a valid id.
+  useEffect(() => {
+    if (user && user.id && products.length > 0) {
+      const updatedLikedItems = {};
+      products.forEach((product) => {
+        // Ensure product.likedBy is an array; filter out any null/undefined values.
+        const likedByIds = (product.likedBy || [])
+          .filter((id) => id != null)
+          .map((id) => id.toString());
+        updatedLikedItems[product._id] = likedByIds.includes(
+          user.id.toString()
+        );
+      });
+      setLikedItems(updatedLikedItems);
+    } else {
+      setLikedItems({});
+    }
+  }, [user, products]);
+
   const handlePriceFilter = () => {
     setFilteredProducts(
-      products.filter((product) => {
-        return product.price >= minPrice && product.price <= maxPrice;
-      })
+      products.filter(
+        (product) => product.price >= minPrice && product.price <= maxPrice
+      )
     );
   };
 
   const handleCategoryClick = (selectedCategory) => {
     setActiveCategory(selectedCategory);
-
     if (selectedCategory === "All Categories") {
       setFilteredProducts(products);
     } else {
@@ -107,9 +127,7 @@ const Shop = () => {
 
   const handleSort = (order) => {
     setSortOrder(order);
-
     let sortedProducts = [...filteredProducts];
-
     if (order === "Price: Low to High") {
       sortedProducts.sort((a, b) => a.price - b.price);
     } else if (order === "Price: High to Low") {
@@ -127,20 +145,16 @@ const Shop = () => {
         return categoryMatch && priceMatch;
       });
     }
-
     setFilteredProducts(sortedProducts);
   };
 
   const productPerPage = 9;
-
   const indexOfLastProduct = currentPage * productPerPage;
   const indexOfFirstProduct = indexOfLastProduct - productPerPage;
-
   const currentProducts = filteredProducts.slice(
     indexOfFirstProduct,
     indexOfLastProduct
   );
-
   const totalPages = Math.ceil(filteredProducts.length / productPerPage);
   const startPage = Math.max(1, Math.min(currentPage - 1, totalPages - 2));
   const endPage = Math.min(startPage + 2, totalPages);
@@ -149,13 +163,32 @@ const Shop = () => {
     setCurrentPage(pageNumber);
   };
 
-  if (loading) {
-    return <p>Loading products...</p>;
-  }
+  // Toggle like/unlike for a product
+  const handleToggleLike = async (id) => {
+    if (!user) {
+      alert("Please log in to like products.");
+      return;
+    }
+    try {
+      if (likedItems[id]) {
+        // If already liked, call unlike endpoint
+        await axios.post(`/api/products/${id}/unlike`);
+        setLikedItems((prev) => ({ ...prev, [id]: false }));
+        alert("Product unliked!");
+      } else {
+        // If not liked, call like endpoint
+        await axios.post(`/api/products/${id}/like`);
+        setLikedItems((prev) => ({ ...prev, [id]: true }));
+        alert("Product liked!");
+      }
+    } catch (err) {
+      console.error("Error toggling like:", err);
+      alert("Error toggling like");
+    }
+  };
 
-  if (error) {
-    return <p>{error}</p>;
-  }
+  if (loading) return <p>Loading products...</p>;
+  if (error) return <p>{error}</p>;
 
   return (
     <div className="shop-container container">
@@ -173,31 +206,25 @@ const Shop = () => {
         </p>
       </div>
 
-      {/* ======================================================================= */}
-
       <div className="low-shoppers d-flex align-items-start">
         <div className="side-bar d-flex flex-column justify-content-center gap-5">
           <div className="pro-cat text-start d-flex flex-column">
             <h3 className="m-0">Product categories</h3>
             <div className="cate-dire d-flex flex-column gap-4">
-              {categories.map((categoryName) => {
-                return (
-                  <div
-                    key={categoryName}
-                    className={`d-flex align-items-center gap-2 ${
-                      activeCategory === categoryName ? "active-category" : ""
-                    }`}
-                    onClick={() => handleCategoryClick(categoryName)}
-                  >
-                    <FaPlus className="plus-icon" />
-                    <p className="mb-0">{categoryName}</p>
-                  </div>
-                );
-              })}
+              {categories.map((categoryName) => (
+                <div
+                  key={categoryName}
+                  className={`d-flex align-items-center gap-2 ${
+                    activeCategory === categoryName ? "active-category" : ""
+                  }`}
+                  onClick={() => handleCategoryClick(categoryName)}
+                >
+                  <FaPlus className="plus-icon" />
+                  <p className="mb-0">{categoryName}</p>
+                </div>
+              ))}
             </div>
           </div>
-
-          {/* =================================== */}
 
           <form
             onSubmit={(event) => {
@@ -218,7 +245,6 @@ const Shop = () => {
                   onChange={(event) => setMaxPrice(Number(event.target.value))}
                   className="range-filter"
                 />
-
                 <div className="d-flex align-items-center justify-content-between">
                   <p className="m-0">₦{minPrice}</p>
                   <p className="m-0">₦{maxPrice}</p>
@@ -227,8 +253,6 @@ const Shop = () => {
               <button className="py-3 px-5">Apply</button>
             </div>
           </form>
-
-          {/* =================================== */}
 
           <div className="poor-con text-start d-flex flex-column">
             <h3 className="mb-0">Popular products</h3>
@@ -243,7 +267,6 @@ const Shop = () => {
                   <img src={starsR} alt="" />
                 </div>
               </div>
-
               <div className="d-flex align-items-center gap-2">
                 <img src={stack} alt="" />
                 <div>
@@ -254,7 +277,6 @@ const Shop = () => {
                   <img src={starsR} alt="" />
                 </div>
               </div>
-
               <div className="d-flex align-items-center gap-2">
                 <img src={bicycle} alt="" />
                 <div>
@@ -268,8 +290,6 @@ const Shop = () => {
             </div>
           </div>
         </div>
-
-        {/* ======================================= */}
 
         <div className="main-shoppers">
           <h2 className="text-start m-0">{activeCategory}</h2>
@@ -301,7 +321,6 @@ const Shop = () => {
                 </ul>
               )}
             </div>
-
             <p className="m-0 show-res">
               Showing {indexOfFirstProduct + 1} -{" "}
               {Math.min(indexOfLastProduct, filteredProducts.length)} of{" "}
@@ -309,7 +328,6 @@ const Shop = () => {
             </p>
           </div>
 
-          {/* ================================================= */}
           {filteredProducts.length ? (
             <div className="product-grid position-relative">
               {currentProducts.map((product) => (
@@ -325,7 +343,19 @@ const Shop = () => {
                         alt={product.name}
                       />
                       <div className="lovee-cart position-absolute">
-                        <FaRegHeart />
+                        <span
+                          onClick={(e) => {
+                            e.preventDefault();
+                            handleToggleLike(product._id);
+                          }}
+                          style={{ cursor: "pointer" }}
+                        >
+                          {likedItems[product._id] ? (
+                            <FaHeart color="red" />
+                          ) : (
+                            <FaRegHeart />
+                          )}
+                        </span>
                         {user ? (
                           <FiShoppingCart
                             onClick={() => addToCart(product._id, 1)}
@@ -341,7 +371,6 @@ const Shop = () => {
                         )}
                       </div>
                     </div>
-
                     <div className="looo-card mt-4 d-flex flex-column align-items-start justify-content-start">
                       <div className="name-pri d-flex flex-column align-items-start justify-content-start">
                         <h3 className="m-0">{product.name}</h3>
@@ -356,8 +385,6 @@ const Shop = () => {
                   />
                 </div>
               ))}
-
-              {/* =================================================================== */}
 
               <div className="page-no d-flex align-items-center justify-content-between position-absolute">
                 <div

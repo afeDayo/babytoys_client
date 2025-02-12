@@ -1,0 +1,42 @@
+/* src/pages/Views/LikesPage.css */
+.likes-page {
+  padding: 32px 0; /* 2rem = 32px */
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px; /* 1.5rem = 24px */
+  margin-top: 32px; /* 2rem = 32px */
+}
+
+.product-card {
+  background: #fff;
+  border: 1px solid #eaeaea;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+  width: 280.39px;
+}
+
+.product-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-card .card-img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.product-card .card-title {
+  font-size: 19px; /* approx. 1.2rem ~ 19.2px, rounded to 19px */
+  margin: 8px 0; /* 0.5rem = 8px */
+  padding: 0 16px; /* 1rem = 16px */
+}
+
+.product-card .card-price,
+.product-card .card-likes {
+  font-size: 16px; /* 1rem = 16px */
+  padding: 0 16px 16px; /* 0 1rem 1rem = 0 16px 16px */
+  color: #555;
+}

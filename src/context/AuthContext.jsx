@@ -2,39 +2,63 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
 import axios from "../api/axios";
 
-// Create the context
+// We'll use dynamic import for jwt-decode as before.
 const AuthContext = createContext();
 
-// Provider component that wraps your application
 export const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(null); // Stores the user object (or token)
+  const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  // On initial load, retrieve the token from localStorage (if available)
+  // Helper function to decode the token using jwt-decode dynamically.
+  const decodeToken = async (token) => {
+    try {
+      const mod = await import("jwt-decode");
+      const jwtDecode = mod.default || mod;
+      return jwtDecode(token);
+    } catch (err) {
+      console.error("Error importing jwt-decode:", err);
+      return null;
+    }
+  };
+
+  // On initial load, try to get the token and decode it.
   useEffect(() => {
     const token = localStorage.getItem("authToken");
     if (token) {
-      // In a real-world app you might decode the token or fetch user details.
-      setUser({ token });
+      decodeToken(token).then((decoded) => {
+        if (decoded) {
+          // Set the user with a consistent 'id' property.
+          setUser({ token, id: decoded.id });
+        }
+        setLoading(false);
+      });
+    } else {
+      setLoading(false);
     }
-    setLoading(false);
   }, []);
 
-  // Login function that calls the server and stores the token
   const login = async (credentials) => {
     try {
       const response = await axios.post("/api/auth/login", credentials);
       const { token, user: userData } = response.data;
       localStorage.setItem("authToken", token);
-      // Store the returned user data or just the token
-      setUser(userData || { token });
+
+      // If the server returns a user object with _id, map it to id.
+      if (userData && userData._id) {
+        setUser({ ...userData, id: userData._id, token });
+      } else {
+        // Otherwise, decode the token.
+        const decoded = await decodeToken(token);
+        if (decoded) {
+          setUser({ token, id: decoded.id });
+        }
+      }
       return response.data;
     } catch (error) {
       throw error;
     }
   };
 
-  // Register function (optional)
   const register = async (registrationData) => {
     try {
       const response = await axios.post("/api/auth/signup", registrationData);
@@ -44,7 +68,6 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  // Logout function clears the token and user state
   const logout = () => {
     localStorage.removeItem("authToken");
     setUser(null);
@@ -57,5 +80,4 @@ export const AuthProvider = ({ children }) => {
   );
 };
 
-// Custom hook to easily access authentication data in any component
 export const useAuth = () => useContext(AuthContext);

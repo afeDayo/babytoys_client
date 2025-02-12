@@ -51,6 +51,8 @@
 .loc-con {
   padding-top: 50px;
   padding-bottom: 80px;
+  width: 1245px;
+  gap: 60px;
 }
 
 .con-inp input,
