@@ -22,6 +22,7 @@
   line-height: 22.4px;
   color: #2d2d2d;
   width: 243px;
+  font-size: 16px;
 }
 
 .foot-two,
@@ -33,14 +34,106 @@
 .foot-three h5 {
   font-weight: 700;
   color: #2d2d2d;
+  font-size: 20px;
 }
 
 .foot-two p,
 .foot-three p {
   margin-bottom: 0;
   color: #2d2d2d;
+  font-size: 16px;
 }
 
 .foot-three p span {
   color: #0f83b2;
+}
+
+@media (max-width: 768px) {
+  .inn-footer {
+    top: 71px;
+    left: 3.6%;
+    gap: 43px;
+    max-width: 438px;
+  }
+
+  .foot-one {
+    gap: 17px;
+  }
+
+  .foot-one p {
+    font-size: 9px;
+    font-weight: 213;
+    line-height: 12px;
+    max-width: 130px;
+  }
+
+  .foot-two,
+  .foot-three {
+    gap: 15px;
+  }
+
+  .footloog {
+    max-width: 115px;
+    max-height: 42px;
+  }
+
+  .mmmmm img {
+    max-width: 16.4px;
+    max-height: 16.4px;
+  }
+
+  .foot-two h5,
+  .foot-three h5 {
+    font-size: 11px;
+  }
+
+  .foot-two p,
+  .foot-three p {
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 576px) {
+  .inn-footer {
+    top: 25px;
+    left: 2.75%;
+    gap: 12px;
+    max-width: 300px;
+  }
+
+  .foot-one {
+    gap: 12px;
+  }
+
+  .foot-one p {
+    font-weight: 160;
+    line-height: 8px;
+    max-width: 97px;
+    font-size: 6px;
+  }
+
+  .foot-two,
+  .foot-three {
+    gap: 11px;
+  }
+
+  .footloog {
+    max-width: 86px;
+    max-height: 31px;
+  }
+
+  .mmmmm img {
+    max-width: 12px;
+    max-height: 12px;
+  }
+
+  .foot-two h5,
+  .foot-three h5 {
+    font-size: 8px;
+  }
+
+  .foot-two p,
+  .foot-three p {
+    font-size: 6px;
+  }
 }

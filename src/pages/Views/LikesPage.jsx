@@ -8,6 +8,44 @@ import { FaRegHeart } from "react-icons/fa";
 import { FiShoppingCart } from "react-icons/fi";
 import { useCart } from "../../context/CartContext";
 import { useAuth } from "../../context/AuthContext";
+import { toast } from "react-toastify";
+import { Spinner } from "react-bootstrap";
+
+// Custom confirm using toast that returns a promise.
+const confirmClearLikes = () =>
+  new Promise((resolve, reject) => {
+    toast.info(
+      <div>
+        <div>Are you sure you want to clear all likes?</div>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "flex-end",
+            marginTop: "10px",
+          }}
+        >
+          <button
+            onClick={() => {
+              toast.dismiss();
+              resolve(true);
+            }}
+            style={{ marginRight: "10px" }}
+          >
+            Yes
+          </button>
+          <button
+            onClick={() => {
+              toast.dismiss();
+              reject();
+            }}
+          >
+            Cancel
+          </button>
+        </div>
+      </div>,
+      { autoClose: false }
+    );
+  });
 
 const LikesPage = () => {
   const [likedProducts, setLikedProducts] = useState([]);
@@ -17,80 +55,116 @@ const LikesPage = () => {
   const { addToCart } = useCart();
   const { user } = useAuth();
 
-  useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        const response = await axios.get("/api/products");
-        const products = response.data;
-        let liked = [];
-        // Only filter products for a logged-in user
-        if (user && user.id) {
-          liked = products.filter((product) => {
-            return (
-              product.likedBy &&
-              product.likedBy.some(
-                (uid) => uid && uid.toString() === user.id.toString()
-              )
-            );
-          });
-        }
-        // Optionally sort the liked products (e.g. descending by likes)
-        liked.sort((a, b) => b.likes - a.likes);
-        setLikedProducts(liked);
-      } catch (err) {
-        setError("Failed to fetch liked products.");
-      } finally {
-        setLoading(false);
+  const fetchLikedProducts = async () => {
+    try {
+      const response = await axios.get("/api/products");
+      const products = response.data;
+      let liked = [];
+      // Only filter products if a user is logged in.
+      if (user && user.id) {
+        liked = products.filter((product) => {
+          return (
+            product.likedBy &&
+            product.likedBy.some(
+              (uid) => uid && uid.toString() === user.id.toString()
+            )
+          );
+        });
       }
-    };
+      // Optionally, sort liked products descending by likes.
+      liked.sort((a, b) => b.likes - a.likes);
+      setLikedProducts(liked);
+    } catch (err) {
+      setError("Failed to fetch liked products.");
+    } finally {
+      setLoading(false);
+    }
+  };
 
-    fetchProducts();
+  useEffect(() => {
+    fetchLikedProducts();
   }, [user]);
 
-  // Handler to unlike a single product
+  // Handler to unlike a single product.
   const handleUnlike = async (productId) => {
     if (!user) {
-      alert("Please log in to unlike products.");
+      toast.info("Please log in to unlike products.");
       return;
     }
     try {
-      await axios.post(`/api/products/${productId}/unlike`);
-      // Remove the product from local state after unliking
+      await axios.post(
+        `/api/products/${productId}/unlike`,
+        {},
+        {
+          headers: {
+            Authorization: `Bearer ${
+              user.token || localStorage.getItem("authToken")
+            }`,
+          },
+        }
+      );
       setLikedProducts((prev) =>
         prev.filter((product) => product._id !== productId)
       );
-      alert("Product unliked!");
+      toast.success("Product unliked!");
     } catch (err) {
       console.error("Error unliking product:", err);
-      alert("Error unliking product");
+      toast.error("Error unliking product");
     }
   };
 
-  // Handler for the "Clear All Likes" button
+  // Handler for "Clear All Likes"
   const handleClearAllLikes = async () => {
-    if (!window.confirm("Are you sure you want to clear all likes?")) return;
+    try {
+      await confirmClearLikes();
+    } catch {
+      return; // If user cancels, do nothing.
+    }
     if (!user) {
-      alert("Please log in to clear likes.");
+      toast.info("Please log in to clear likes.");
       return;
     }
     try {
-      // Call unlike endpoint for every liked product
       await Promise.all(
         likedProducts.map((product) =>
-          axios.post(`/api/products/${product._id}/unlike`)
+          axios.post(
+            `/api/products/${product._id}/unlike`,
+            {},
+            {
+              headers: {
+                Authorization: `Bearer ${
+                  user.token || localStorage.getItem("authToken")
+                }`,
+              },
+            }
+          )
         )
       );
-      alert("All likes cleared!");
-      setLikedProducts([]); // Reset local liked products state
+      toast.success("All likes cleared!");
+      setLikedProducts([]);
     } catch (err) {
       console.error("Error clearing likes:", err);
-      alert("Error clearing likes");
+      toast.error("Error clearing likes");
     }
   };
 
-  if (loading) return <p>Loading liked products...</p>;
-  if (error) return <p>{error}</p>;
+  if (loading) {
+    return (
+      <div
+        className="d-flex justify-content-center align-items-center"
+        style={{ height: "300px" }}
+      >
+        <Spinner animation="border" variant="primary" />
+      </div>
+    );
+  }
+
+  if (error) {
+    return <p>{error}</p>;
+  }
+
   if (!user) return <p>Please log in to view your liked products.</p>;
+
   if (likedProducts.length === 0)
     return <p>You have not liked any products yet.</p>;
 
@@ -137,7 +211,6 @@ const LikesPage = () => {
               </div>
             </Link>
             <ProductRating
-              key={product._id}
               productId={product._id}
               initialRating={product.ratings?.average}
             />

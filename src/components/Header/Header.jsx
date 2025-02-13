@@ -10,7 +10,7 @@ const Header = () => {
       <div className="h-text position-absolute d-md-flex flex-md-column align-items-md-start">
         <div className="t-head d-md-flex flex-md-column gap-3">
           <h1 className="m-0">Play, learn, & grow!</h1>
-          <p className="m-0 pe-5">
+          <p className="m-0 pe-lg-5">
             Crafting smiles with every toy, made for learning, fun, and growth
           </p>
         </div>

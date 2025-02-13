@@ -45,27 +45,29 @@ const popularProducts = [
 const Popular = () => {
   return (
     <div className="popular-con container">
-      <div className="d-flex align-items-center gap-3 mb-5">
+      <div className="d-flex align-items-center gap-lg-3 mb-lg-5 gap-1 mb-1">
         <div className="position-relative">
-          <img className="position-relative" src={play} alt="" />
+          <img className="position-relative yaya" src={play} alt="" />
           <Link to="/shop" className="inner-play position-absolute">
             {" "}
-            <img src={innerPlay} alt="" />
+            <img src={innerPlay} alt="" className="ture" />
             <h2 className="play-text position-absolute">
               Discover the Joy of Play
             </h2>
           </Link>
         </div>
         <div className="position-relative">
-          <img src={ecofrd} alt="" />
-          <div className="eco-text text-start d-flex flex-column gap-4 align-items-start position-absolute">
+          <img src={ecofrd} alt="" className="malesha" />
+          <div className="eco-text text-start d-flex flex-column gap-lg-4 gap-1 align-items-start position-absolute">
             <div className="eco-frd d-flex flex-column gap-2">
               <h2 className="mb-0">Eco - Friendly Toys</h2>
               <p className="mb-0">
                 Flash sale 30%, Extra discount for loyal customers
               </p>
             </div>
-            <button className="border-0 py-2 px-4 rounded-5">Shop now </button>
+            <button className="border-0 py-lg-2 px-lg-4 py-1 px-2 rounded-5">
+              Shop now{" "}
+            </button>
           </div>
         </div>
       </div>

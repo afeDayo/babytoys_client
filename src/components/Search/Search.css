@@ -1,29 +1,93 @@
+/* Mobile-first styles for Search component */
 .navinput {
-  width: 295px;
-  padding: 10px 20px;
+  width: 100%;
+  max-width: 295px;
+  padding: 8px 16px;
   border-radius: 26px;
   border: 2px solid #d4d4d4;
+  font-size: 14px;
 }
 
 .navinput::placeholder {
   font-weight: 600;
   color: #7f7f7f;
+  font-size: 14px;
 }
 
+/* Container to constrain search input width */
+.search-input-wrapper {
+  width: 100%;
+  max-width: 295px;
+}
+
+/* Search icon positioned inside the input */
+.search-icon {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+}
+
+/* Cart icon and badge */
+.cart-icon-wrapper {
+  position: relative;
+}
+
+.nav-cart-img {
+  width: 24px;
+  height: 24px;
+}
+
+/* Badge positioning on the cart icon */
 .cart-badge {
   position: absolute;
-  top: 0px;
-  right: 338px;
+  top: -4px;
+  right: -4px;
   background: #e3b110;
   color: white;
   border-radius: 50%;
-  padding: 3px 6px;
+  padding: 2px 4px;
   z-index: 2;
 }
 
 .cart-badge p {
-  font-family: "Poppins", serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 800;
   font-size: 10px;
-  color: #000000;
+  margin: 0;
+}
+
+/* Scale down texts & icons on extra small screens */
+@media (max-width: 576px) {
+  .navinput {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+
+  .navinput::placeholder {
+    font-size: 12px;
+  }
+
+  .search-icon {
+    width: 16px;
+    height: 16px;
+    right: 8px;
+  }
+
+  .nav-cart-img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .cart-badge {
+    top: -3px;
+    right: -3px;
+    padding: 1px 3px;
+  }
+
+  .search-container {
+    gap: 2px;
+  }
 }

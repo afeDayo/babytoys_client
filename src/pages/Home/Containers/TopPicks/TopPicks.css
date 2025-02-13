@@ -111,3 +111,145 @@
   font-weight: 600;
   color: #171717;
 }
+
+@media (max-width: 768px) {
+  .carousel-slide {
+    min-width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .caro-con {
+    padding-top: 27px;
+    padding-bottom: 21px;
+    gap: 17px;
+  }
+
+  .caro-but h2 {
+    font-size: 20px;
+  }
+
+  .carousel-buttons {
+    gap: 32px;
+  }
+
+  .carousel-btn {
+    border-radius: 23px;
+    font-size: 11px;
+    padding: 6px 9px;
+  }
+
+  .carousel-slide {
+    padding: 5px;
+  }
+
+  .product-card {
+    max-width: 157px;
+    max-height: 212px;
+    margin-bottom: 32px;
+    gap: 11px;
+  }
+
+  .product-card img {
+    max-width: 117px;
+    max-height: 117px;
+  }
+
+  .card-img {
+    max-width: 157px;
+    max-height: 157px;
+    border-radius: 11px;
+  }
+
+  .loo-card {
+    gap: 6px;
+  }
+
+  .love-cart {
+    top: 9px;
+    gap: 4px;
+    right: 9px;
+  }
+
+  .nam-pri {
+    gap: 3px;
+  }
+
+  .nam-pri h3 {
+    font-size: 10px;
+  }
+
+  .nam-pri p {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .carousel-slide {
+    min-width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .caro-con {
+    padding-top: 20px;
+    padding-bottom: 16px;
+    gap: 13px;
+  }
+
+  .caro-but h2 {
+    font-size: 15px;
+  }
+
+  .carousel-buttons {
+    gap: 24px;
+  }
+
+  .carousel-btn {
+    border-radius: 17px;
+    font-size: 8px;
+    padding: 3px 6px;
+  }
+
+  .carousel-slide {
+    padding: 4px;
+  }
+
+  .product-card {
+    max-width: 100px;
+    max-height: 159px;
+    margin-bottom: 24px;
+    gap: 8px;
+  }
+
+  .product-card img {
+    max-width: 88px;
+    max-height: 88px;
+  }
+
+  .card-img {
+    max-width: 118px;
+    max-height: 118px;
+    border-radius: 8px;
+  }
+
+  .loo-card {
+    gap: 5px;
+  }
+
+  .love-cart {
+    top: 7px;
+    gap: 3px;
+    right: 7px;
+  }
+
+  .nam-pri {
+    gap: 2px;
+  }
+
+  .nam-pri h3 {
+    font-size: 7px;
+  }
+
+  .nam-pri p {
+    font-size: 7px;
+  }
+}

@@ -85,3 +85,122 @@
   left: 0;
   right: 0;
 }
+
+@media (max-width: 768px) {
+  .photo-tits h2 {
+    font-size: 20px;
+  }
+
+  .photo-tits p {
+    font-size: 12px;
+  }
+
+  .photo-img img {
+    max-width: 120px;
+    max-height: 120px;
+  }
+
+  .benefits {
+    gap: 12px;
+  }
+
+  .benefits img {
+    max-width: 150px;
+    max-height: 74px;
+  }
+
+  .newslet {
+    max-width: 386px;
+  }
+
+  .news-tits h2 {
+    font-size: 20px;
+  }
+
+  .news-tits p {
+    font-size: 12px;
+  }
+
+  .news-in {
+    gap: 6px;
+  }
+
+  .news-in input::placeholder {
+    font-size: 12px;
+  }
+
+  .news-in button {
+    font-size: 12px;
+    padding: 8px 15px;
+  }
+
+  .news-msg {
+    margin-top: 6px;
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .photo-tits h2 {
+    font-size: 18px;
+  }
+
+  .photo-tits p {
+    font-size: 8px;
+  }
+
+  .photo-img {
+    max-width: 400px;
+  }
+
+  .photo-img img {
+    max-width: 74px;
+    max-height: 74px;
+  }
+
+  .benefits {
+    gap: 5.21px;
+  }
+
+  .newslet {
+    max-width: 175.5px;
+  }
+
+  .news-tits h2 {
+    font-size: 18px;
+  }
+
+  .news-tits p {
+    font-size: 8px;
+  }
+
+  .news-in {
+    gap: 5px;
+  }
+
+  .news-in input {
+    padding: 4px 8px;
+    width: 150px;
+    border-radius: 4px;
+  }
+
+  .news-in input::placeholder {
+    font-size: 8px;
+  }
+
+  .news-in button {
+    font-size: 8px;
+    padding: 8px 5px;
+    border-radius: 5px;
+  }
+
+  .news-msg {
+    margin-top: 4px;
+    font-size: 6px;
+  }
+
+  .benefits img {
+    max-width: 104.19px;
+    max-height: 67.17px;
+  }
+}

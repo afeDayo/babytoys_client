@@ -1,13 +1,14 @@
 // src/pages/Log/Login.jsx
 import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import "./Login.css";
-import { Link } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 
 const Login = () => {
   const [formData, setFormData] = useState({ email: "", password: "" });
   const [error, setError] = useState("");
-  const { login } = useAuth(); // Get the login function from the AuthContext
+  const { login } = useAuth(); // Get the login function from AuthContext
+  const navigate = useNavigate();
 
   const handleChange = (event) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
@@ -18,8 +19,7 @@ const Login = () => {
     try {
       await login(formData); // Call the context's login function
       setError("");
-      alert("Login successful");
-      // Optionally, redirect the user after login here.
+      navigate("/"); // Redirect to the home page upon successful login
     } catch (err) {
       setError(err.response?.data?.message || "Login failed");
     }

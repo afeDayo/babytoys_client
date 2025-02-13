@@ -17,6 +17,8 @@ import AuthLayout from "./layout/AuthLayout";
 import LikesPage from "./pages/Views/LikesPage";
 import { CartProvider } from "./context/CartContext";
 import { AuthProvider } from "./context/AuthContext";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
@@ -47,6 +49,7 @@ function App() {
           </Router>
         </CartProvider>
       </AuthProvider>
+      <ToastContainer />
     </>
   );
 }

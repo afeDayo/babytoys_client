@@ -1,3 +1,4 @@
+// src/pages/Shop/Shop.jsx
 import React, { useEffect, useState } from "react";
 import axios from "../../api/axios";
 import { Link, useLocation } from "react-router-dom";
@@ -30,6 +31,7 @@ const Shop = () => {
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
   const category = queryParams.get("category");
+  const search = queryParams.get("search") || "";
 
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
@@ -42,18 +44,15 @@ const Shop = () => {
   const [activeCategory, setActiveCategory] = useState(
     category || "All Categories"
   );
-
   const [sortOrder, setSortOrder] = useState("Default sorting");
   const [sortOrderDropdownOpen, setSortOrderDropdownOpen] = useState(false);
-
   const [currentPage, setCurrentPage] = useState(1);
-
-  // Local state to track liked products (object: { [productId]: true/false })
-  const [likedItems, setLikedItems] = useState({});
 
   const { addToCart } = useCart();
   const { user } = useAuth();
+  const token = user?.token || localStorage.getItem("authToken");
 
+  // Fetch products from the server.
   useEffect(() => {
     const fetchProducts = async () => {
       try {
@@ -69,42 +68,24 @@ const Shop = () => {
     fetchProducts();
   }, []);
 
+  // Filter products based on category and search query.
   useEffect(() => {
+    let filtered = products;
     if (category) {
-      setFilteredProducts(
-        products.filter((product) => product.category === category)
+      filtered = filtered.filter((product) => product.category === category);
+    }
+    if (search) {
+      filtered = filtered.filter((product) =>
+        product.name.toLowerCase().includes(search.toLowerCase())
       );
-    } else {
-      setFilteredProducts(products);
     }
-  }, [category, products]);
+    setFilteredProducts(filtered);
+  }, [products, category, search]);
 
+  // Update active category display.
   useEffect(() => {
-    if (category) {
-      setActiveCategory(category);
-    } else {
-      setActiveCategory("All Categories");
-    }
+    setActiveCategory(category || "All Categories");
   }, [category]);
-
-  // Updated useEffect: Only run if user exists and has a valid id.
-  useEffect(() => {
-    if (user && user.id && products.length > 0) {
-      const updatedLikedItems = {};
-      products.forEach((product) => {
-        // Ensure product.likedBy is an array; filter out any null/undefined values.
-        const likedByIds = (product.likedBy || [])
-          .filter((id) => id != null)
-          .map((id) => id.toString());
-        updatedLikedItems[product._id] = likedByIds.includes(
-          user.id.toString()
-        );
-      });
-      setLikedItems(updatedLikedItems);
-    } else {
-      setLikedItems({});
-    }
-  }, [user, products]);
 
   const handlePriceFilter = () => {
     setFilteredProducts(
@@ -134,16 +115,6 @@ const Shop = () => {
       sortedProducts.sort((a, b) => b.price - a.price);
     } else if (order === "Alphabetical") {
       sortedProducts.sort((a, b) => a.name.localeCompare(b.name));
-    } else {
-      sortedProducts = products.filter((product) => {
-        const categoryMatch =
-          activeCategory === "All Categories"
-            ? true
-            : product.category === activeCategory;
-        const priceMatch =
-          product.price >= minPrice && product.price <= maxPrice;
-        return categoryMatch && priceMatch;
-      });
     }
     setFilteredProducts(sortedProducts);
   };
@@ -163,32 +134,46 @@ const Shop = () => {
     setCurrentPage(pageNumber);
   };
 
-  // Toggle like/unlike for a product
+  // Toggle like/unlike for a product.
   const handleToggleLike = async (id) => {
     if (!user) {
       alert("Please log in to like products.");
       return;
     }
     try {
-      if (likedItems[id]) {
-        // If already liked, call unlike endpoint
-        await axios.post(`/api/products/${id}/unlike`);
-        setLikedItems((prev) => ({ ...prev, [id]: false }));
-        alert("Product unliked!");
+      const product = products.find((p) => p._id === id);
+      const likedBy = Array.isArray(product.likedBy) ? product.likedBy : [];
+      const isLiked =
+        user &&
+        likedBy.some((uid) => uid && uid.toString() === user._id.toString());
+      if (isLiked) {
+        await axios.post(
+          `/api/products/${id}/unlike`,
+          {},
+          { headers: { Authorization: `Bearer ${token}` } }
+        );
       } else {
-        // If not liked, call like endpoint
-        await axios.post(`/api/products/${id}/like`);
-        setLikedItems((prev) => ({ ...prev, [id]: true }));
-        alert("Product liked!");
+        await axios.post(
+          `/api/products/${id}/like`,
+          {},
+          { headers: { Authorization: `Bearer ${token}` } }
+        );
       }
+      const response = await axios.get("/api/products");
+      setProducts(response.data);
     } catch (err) {
       console.error("Error toggling like:", err);
       alert("Error toggling like");
     }
   };
 
-  if (loading) return <p>Loading products...</p>;
-  if (error) return <p>{error}</p>;
+  if (loading) {
+    return <p>Loading products...</p>;
+  }
+
+  if (error) {
+    return <p>{error}</p>;
+  }
 
   return (
     <div className="shop-container container">
@@ -205,7 +190,6 @@ const Shop = () => {
           </span>
         </p>
       </div>
-
       <div className="low-shoppers d-flex align-items-start">
         <div className="side-bar d-flex flex-column justify-content-center gap-5">
           <div className="pro-cat text-start d-flex flex-column">
@@ -225,7 +209,6 @@ const Shop = () => {
               ))}
             </div>
           </div>
-
           <form
             onSubmit={(event) => {
               event.preventDefault();
@@ -253,7 +236,6 @@ const Shop = () => {
               <button className="py-3 px-5">Apply</button>
             </div>
           </form>
-
           <div className="poor-con text-start d-flex flex-column">
             <h3 className="mb-0">Popular products</h3>
             <div className="three-poor d-flex flex-column gap-4">
@@ -290,7 +272,6 @@ const Shop = () => {
             </div>
           </div>
         </div>
-
         <div className="main-shoppers">
           <h2 className="text-start m-0">{activeCategory}</h2>
           <div className="d-flex justify-content-between px-4 me-2 mt-4">
@@ -327,65 +308,78 @@ const Shop = () => {
               {filteredProducts.length} results
             </p>
           </div>
-
           {filteredProducts.length ? (
             <div className="product-grid position-relative">
-              {currentProducts.map((product) => (
-                <div key={product._id} className="each-card">
-                  <Link
-                    to={`/product/${product._id}`}
-                    className="text-decoration-none text-black"
-                  >
-                    <div className="each-img position-relative d-flex align-items-center justify-content-center">
-                      <img
-                        className="m-0"
-                        src={product.image}
-                        alt={product.name}
-                      />
-                      <div className="lovee-cart position-absolute">
-                        <span
-                          onClick={(e) => {
-                            e.preventDefault();
-                            handleToggleLike(product._id);
-                          }}
-                          style={{ cursor: "pointer" }}
-                        >
-                          {likedItems[product._id] ? (
-                            <FaHeart color="red" />
-                          ) : (
-                            <FaRegHeart />
-                          )}
-                        </span>
-                        {user ? (
-                          <FiShoppingCart
-                            onClick={() => addToCart(product._id, 1)}
+              {currentProducts.map((product) => {
+                const isLiked =
+                  user &&
+                  product.likedBy &&
+                  product.likedBy.some(
+                    (uid) => uid && uid.toString() === user._id.toString()
+                  );
+                return (
+                  <div key={product._id} className="each-card">
+                    <Link
+                      to={`/product/${product._id}`}
+                      className="text-decoration-none text-black"
+                    >
+                      <div className="each-img position-relative d-flex align-items-center justify-content-center">
+                        <img
+                          className="m-0"
+                          src={product.image}
+                          alt={product.name}
+                        />
+                        <div className="lovee-cart position-absolute">
+                          <span
+                            onClick={(e) => {
+                              e.preventDefault();
+                              e.stopPropagation();
+                              handleToggleLike(product._id);
+                            }}
                             style={{ cursor: "pointer" }}
-                          />
-                        ) : (
-                          <FiShoppingCart
-                            onClick={() =>
-                              alert("Please log in to add items to your cart")
-                            }
-                            style={{ cursor: "not-allowed", opacity: 0.5 }}
-                          />
-                        )}
+                          >
+                            {user &&
+                            product.likedBy &&
+                            product.likedBy.some(
+                              (uid) =>
+                                uid && uid.toString() === user._id.toString()
+                            ) ? (
+                              <FaHeart color="red" />
+                            ) : (
+                              <FaRegHeart />
+                            )}
+                          </span>
+                          {user ? (
+                            <FiShoppingCart
+                              onClick={() => addToCart(product._id, 1)}
+                              style={{ cursor: "pointer" }}
+                            />
+                          ) : (
+                            <FiShoppingCart
+                              onClick={() =>
+                                alert("Please log in to add items to your cart")
+                              }
+                              style={{ cursor: "not-allowed", opacity: 0.5 }}
+                            />
+                          )}
+                        </div>
                       </div>
-                    </div>
-                    <div className="looo-card mt-4 d-flex flex-column align-items-start justify-content-start">
-                      <div className="name-pri d-flex flex-column align-items-start justify-content-start">
-                        <h3 className="m-0">{product.name}</h3>
-                        <p className="m-0">₦{product.price.toLocaleString()}</p>
+                      <div className="looo-card mt-4 d-flex flex-column align-items-start justify-content-start">
+                        <div className="name-pri d-flex flex-column align-items-start justify-content-start">
+                          <h3 className="m-0">{product.name}</h3>
+                          <p className="m-0">
+                            ₦{product.price.toLocaleString()}
+                          </p>
+                        </div>
                       </div>
-                    </div>
-                  </Link>
-                  <ProductRating
-                    key={product._id}
-                    productId={product._id}
-                    initialRating={product.ratings?.average}
-                  />
-                </div>
-              ))}
-
+                    </Link>
+                    <ProductRating
+                      productId={product._id}
+                      initialRating={product.ratings?.average}
+                    />
+                  </div>
+                );
+              })}
               <div className="page-no d-flex align-items-center justify-content-between position-absolute">
                 <div
                   onClick={() =>
@@ -397,7 +391,6 @@ const Shop = () => {
                 >
                   <img src={leftaro} alt="" />
                 </div>
-
                 {Array.from(
                   { length: endPage - startPage + 1 },
                   (_, index) => startPage + index
@@ -412,7 +405,6 @@ const Shop = () => {
                     <p className="mb-0">{pageNumber}</p>
                   </div>
                 ))}
-
                 <div
                   onClick={() =>
                     currentPage < totalPages &&

@@ -2,10 +2,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-/* .testi-con {
-  padding: 0 100px;
-} */
-
 .testi-tits h2 {
   font-family: "Balsamiq Sans", sans-serif;
   font-size: 38px;
@@ -89,4 +85,117 @@ h4 {
 
 .arrow.right {
   right: 5px;
+}
+
+@media (max-width: 768px) {
+  .testi-tits h2 {
+    font-size: 20px;
+  }
+
+  .testi-tits p {
+    font-size: 11px;
+  }
+
+  .testimonial-carousel {
+    max-width: 661px;
+    padding: 11px;
+  }
+
+  .carousel-itemz {
+    gap: 11px;
+  }
+
+  .testimonial-item {
+    max-width: 213px;
+    border-radius: 5px;
+    padding: 19.7px 24px 9px 24px;
+  }
+
+  .star-t {
+    font-size: 12px;
+  }
+
+  .test-comm {
+    font-size: 7px;
+    line-height: 12px;
+  }
+
+  .person-pic {
+    max-width: 22px;
+    max-height: 22px;
+    border-radius: 50%;
+  }
+
+  h4 {
+    font-size: 7px;
+  }
+
+  .arrow.left {
+    left: 5px;
+  }
+
+  .arrow.right {
+    right: 5px;
+  }
+
+  .arrow {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+@media (max-width: 576px) {
+  .testi-tits h2 {
+    font-size: 16px;
+  }
+
+  .testi-tits p {
+    font-size: 10px;
+  }
+
+  .testimonial-carousel {
+    max-width: 400px;
+    padding: 8px;
+  }
+
+  .carousel-itemz {
+    gap: 8px;
+  }
+
+  .testimonial-item {
+    max-width: 160px;
+    border-radius: 4px;
+    padding: 15px 18px 7px 18px;
+  }
+
+  .star-t {
+    font-size: 6px;
+  }
+
+  .test-comm {
+    font-size: 6px;
+    line-height: 8px;
+  }
+
+  .person-pic {
+    max-width: 16px;
+    max-height: 16px;
+  }
+
+  h4 {
+    font-size: 6px;
+  }
+
+  .arrow.left {
+    left: 5px;
+  }
+
+  .arrow.right {
+    right: 5px;
+  }
+
+  .arrow {
+    width: 16px;
+    height: 16px;
+  }
 }

@@ -127,3 +127,207 @@
   font-weight: 500;
   color: #2d2d2d;
 }
+
+@media (max-width: 768px) {
+  .popular-slide {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 5.33px;
+  }
+
+  .popular-card {
+    max-width: 157px;
+    max-height: 212px;
+    margin-bottom: 32px;
+    gap: 11px;
+  }
+
+  .popular-card img {
+    max-width: 117px;
+    max-height: 117px;
+  }
+
+  .popular-img {
+    max-width: 157px;
+    max-height: 157px;
+    border-radius: 11px;
+  }
+
+  .loopop-card {
+    gap: 6px;
+  }
+
+  .lovepop-cart {
+    top: 9px;
+    gap: 4px;
+    right: 9px;
+  }
+
+  .nampop-pri {
+    gap: 3px;
+  }
+
+  .nampop-pri h3 {
+    font-size: 10px;
+  }
+
+  .nampop-pri p {
+    font-size: 10px;
+  }
+
+  .inner-play {
+    left: 75px;
+    top: 43px;
+  }
+
+  .play-text {
+    font-size: 19px;
+    line-height: 27px;
+    max-width: 115px;
+    top: 21px;
+    left: 27px;
+  }
+
+  .eco-text {
+    max-width: 177px;
+    top: 37px;
+    right: 19px;
+  }
+
+  .eco-frd h2 {
+    font-size: 18px;
+  }
+
+  .eco-frd p {
+    font-size: 9px;
+    line-height: 12px;
+  }
+
+  .eco-text button {
+    font-size: 9px;
+  }
+
+  .pop-tit h2 {
+    font-size: 20px;
+  }
+
+  .pop-tit p {
+    font-size: 11px;
+  }
+
+  .yaya {
+    max-width: 325px;
+    max-height: 180px;
+  }
+
+  .ture {
+    max-width: 177px;
+    max-height: 95px;
+  }
+
+  .malesha {
+    max-width: 325px;
+    max-height: 180px;
+  }
+}
+
+@media (max-width: 576px) {
+  .popular-slide {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 4px;
+  }
+
+  .popular-card {
+    max-width: 98px;
+    max-height: 159px;
+    margin-bottom: 24px;
+    gap: 8px;
+  }
+
+  .popular-card img {
+    max-width: 88px;
+    max-height: 88px;
+  }
+
+  .popular-img {
+    max-width: 100px;
+    max-height: 100px;
+    border-radius: 8px;
+  }
+
+  .loopop-card {
+    gap: 5px;
+  }
+
+  .lovepop-cart {
+    top: 7px;
+    gap: 3px;
+    right: 7px;
+  }
+
+  .nampop-pri {
+    gap: 2.4px;
+  }
+
+  .nampop-pri h3 {
+    font-size: 8px;
+  }
+
+  .nampop-pri p {
+    font-size: 8px;
+  }
+
+  .inner-play {
+    left: 30px;
+    top: 20px;
+  }
+
+  .play-text {
+    font-size: 12px;
+    line-height: 15px;
+    max-width: 86px;
+    top: 10px;
+    left: 5px;
+  }
+
+  .eco-text {
+    max-width: 82px;
+    top: 10px;
+    right: 14px;
+  }
+
+  .eco-frd h2 {
+    font-size: 10px;
+  }
+
+  .eco-frd p {
+    font-size: 6px;
+    line-height: 8px;
+  }
+
+  .eco-text button {
+    font-size: 7px;
+  }
+
+  .pop-tit h2 {
+    font-size: 15px;
+  }
+
+  .pop-tit p {
+    font-size: 10px;
+  }
+
+  .yaya {
+    max-width: 159.39px;
+    max-height: 88.32px;
+  }
+
+  .ture {
+    max-width: 86.49px;
+    max-height: 46.51px;
+  }
+
+  .malesha {
+    max-width: 159.39px;
+    max-height: 88.32px;
+  }
+}

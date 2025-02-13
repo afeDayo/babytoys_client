@@ -1,9 +1,190 @@
+/* ---------------- Global Navbar Styles ---------------- */
 nav {
   font-family: "Comfortaa", sans-serif;
+  position: relative;
 }
 
+/* ---------------- Desktop Top Banner ---------------- */
+.top-banner-wrapper {
+  top: 0;
+  left: 0;
+  right: 0;
+  margin-top: 1rem; /* Adjust if needed */
+  padding: 0 2rem;
+}
+
+.top-banner-left,
+.top-banner-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.top-banner-text,
+.top-banner-link {
+  font-size: 14px;
+}
+
+.top-banner-icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* ---------------- Desktop Navbar ---------------- */
 .main-nav {
   gap: 110px;
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding: 50px 0;
+}
+
+.nav-logo {
+  max-height: 50px;
+}
+
+.nav-links .nav-link {
+  font-size: 18px;
+}
+
+/* ---------------- Mobile/Tablet Navbar ---------------- */
+.mobile-navbar {
+  padding: 10px 15px;
+}
+
+/* Hamburger Icon Button */
+.hamburger-btn {
+  background: none;
+  border: none;
+  padding: 0.5rem;
+}
+
+.hamburger-icon {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: #000;
+  position: relative;
+}
+.hamburger-icon::before,
+.hamburger-icon::after {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 2px;
+  background-color: #000;
+  left: 0;
+}
+.hamburger-icon::before {
+  top: -8px;
+}
+.hamburger-icon::after {
+  top: 8px;
+}
+
+/* Mobile Logo */
+.nav-logo-mobile {
+  max-height: 40px;
+}
+
+/* Login Button and Icon */
+.login-btn {
+  background: none;
+  border: none;
+  padding: 0.5rem;
+}
+.login-icon svg {
+  width: 24px;
+  height: 24px;
+  fill: #000;
+}
+
+/* ---------------- Hamburger Menu (Side Drawer) ---------------- */
+.hamburger-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 75%;
+  max-width: 300px;
+  height: 100%;
+  background-color: #fff;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
+  z-index: 1050;
+  transition: transform 0.3s ease-in-out;
+  padding: 1rem;
+}
+
+/* Close button for Hamburger Menu */
+.hamburger-menu .close-btn {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  line-height: 1;
+  color: #000;
+  margin-bottom: 1rem;
+}
+
+/* Hamburger Menu List */
+.hamburger-menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.hamburger-menu-list li {
+  border-bottom: 1px solid #e0e0e0;
+}
+.hamburger-menu-list li a {
+  display: block;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  color: #000;
+  font-size: 16px; /* Standard font-size for options */
+}
+
+/* ---------------- Login Dropdown ---------------- */
+.login-dropdown {
+  position: absolute;
+  top: 60px; /* Adjust to be below the mobile navbar */
+  right: 15px;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  z-index: 1060;
+}
+.login-dropdown-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.login-dropdown-list li {
+  border-bottom: 1px solid #e0e0e0;
+}
+.login-dropdown-list li:last-child {
+  border-bottom: none;
+}
+.login-dropdown-list li a {
+  display: block;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  color: #000;
+  font-size: 16px; /* Standard font-size for options */
+}
+
+/* ---------------- Mobile/Tablet Search UI ---------------- */
+.mobile-search {
+  padding: 10px 15px;
+}
+
+/* (Optional) Adjustments on extra small screens */
+@media (max-width: 576px) {
+  .hamburger-icon,
+  .login-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+  .hamburger-menu-list li a,
+  .login-dropdown-list li a {
+    font-size: 14px;
+    padding: 0.5rem 0.75rem;
+  }
+  .nav-logo-mobile {
+    max-height: 35px;
+  }
 }

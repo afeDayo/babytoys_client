@@ -119,12 +119,12 @@ const Testimonials = () => {
     <div className="testi-con container mb-5">
       <div className="testi-tits">
         <h2 className="mb-1">Hear from Other Happy Parents</h2>
-        <p className="mb-5">Customer testimonials</p>
+        <p className="mb-lg-5 mb-1">Customer testimonials</p>
       </div>
 
       {/* =================================== */}
 
-      <div className="testimonial-carousel mt-5">
+      <div className="testimonial-carousel mt-lg-5 mt-1">
         <div className="carousel-itemz">
           {visibileTestimonials.map((testimonial) => {
             return (

@@ -45,7 +45,6 @@ const ProductCard = ({ topPick, poproduct }) => {
       {[1, 2, 3, 4, 5].map((star) => (
         <FaStar
           key={star}
-          size={20}
           className={`star ${star <= (hover || rating) ? "active" : ""}`}
           onMouseEnter={() => setHover(star)}
           onMouseLeave={() => setHover(null)}

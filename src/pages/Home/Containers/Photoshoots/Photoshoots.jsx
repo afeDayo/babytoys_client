@@ -39,15 +39,15 @@ const Photoshoots = () => {
   };
 
   return (
-    <div className="photo-con pt-5">
+    <div className="photo-con pt-lg-5 pt-2">
       <div className="photo-tits">
         <h2 className="mb-1">Recent photoshoots</h2>
-        <p className="mb-5">Check gallery</p>
+        <p className="mb-lg-5 mb-2">Check gallery</p>
       </div>
 
       {/* ========================= */}
 
-      <div className="photo-img mb-5">
+      <div className="photo-img mb-lg-5 mb-2">
         <img src={baby1} alt="" />
         <img src={baby2} alt="" />
         <img src={baby3} alt="" />
@@ -56,7 +56,7 @@ const Photoshoots = () => {
 
       {/* ========================= */}
 
-      <div className="benefits pt-4 d-flex align-items-center justify-content-center mb-5">
+      <div className="benefits pt-4 d-flex align-items-center justify-content-center mb-lg-5 mb-2">
         <img src={frame1} alt="" />
         <img src={frame2} alt="" />
         <img src={frame3} alt="" />
@@ -64,7 +64,7 @@ const Photoshoots = () => {
 
       {/* ========================= */}
 
-      <div className="newslet pt-5 mb-5 pb-3 position-relative">
+      <div className="newslet pt-lg-5 pt-2 mb-lg-5 mb-2 pb-3 position-relative">
         <div className="news-tits mb-4">
           <h2>Newsletter</h2>
           <p>
