@@ -272,7 +272,7 @@ const TopPicks = () => {
                 <div className="loo-card d-flex flex-column align-items-start justify-content-start">
                   <div className="nam-pri d-flex flex-column align-items-start justify-content-start">
                     <h3 className="m-0">{topPick.name}</h3>
-                    <p className="m-0">₦{topPick.price.toLocaleString()}</p>
+                    <p className="m-0">{topPick.price.toLocaleString()}</p>
                   </div>
                   <ProductCard key={topPick.id} topPick={topPick} />
                 </div>
@@ -294,7 +294,7 @@ const TopPicks = () => {
                 <div className="loo-card d-flex flex-column align-items-start justify-content-start">
                   <div className="nam-pri d-flex flex-column align-items-start justify-content-start">
                     <h3 className="m-0">{topPick.name}</h3>
-                    <p className="m-0">{topPick.price}</p>
+                    <p className="m-0">{topPick.price.toLocaleString()}</p>
                   </div>
                   <ProductCard key={topPick.id} topPick={topPick} />
                 </div>
@@ -316,7 +316,7 @@ const TopPicks = () => {
                 <div className="loo-card d-flex flex-column align-items-start justify-content-start">
                   <div className="nam-pri d-flex flex-column align-items-start justify-content-start">
                     <h3 className="m-0">{topPick.name}</h3>
-                    <p className="m-0">{topPick.price}</p>
+                    <p className="m-0">{topPick.price.toLocaleString()}</p>
                   </div>
                   <ProductCard key={topPick.id} topPick={topPick} />
                 </div>
