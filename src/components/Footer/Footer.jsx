@@ -49,7 +49,10 @@ const Footer = () => {
           <div className="d-flex flex-column align-items-start gap-lg-3 gap-1">
             <p className="mb-0">Track my order</p>
             <p className="mb-0">Terms of use</p>
-            <p className="mb-0">Wishlist</p>
+            <Link to="/faq">
+              {" "}
+              <p className="mb-0">FAQs</p>
+            </Link>
             <p className="mb-0">Submit Your feedback</p>
           </div>
         </div>

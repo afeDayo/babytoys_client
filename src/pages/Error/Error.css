@@ -1,0 +1,33 @@
+/* src/pages/Error/Error.css */
+
+.error-page {
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  /* Optional: add a subtle background pattern or image if desired */
+  padding: 2rem;
+}
+
+/* Ensure headings and text are responsive */
+.error-page h1 {
+  font-size: 6rem;
+}
+
+.error-page h2 {
+  font-size: 2.5rem;
+}
+
+.error-page p {
+  font-size: 1.25rem;
+}
+
+/* Mobile adjustments */
+@media (max-width: 576px) {
+  .error-page h1 {
+    font-size: 4rem;
+  }
+  .error-page h2 {
+    font-size: 2rem;
+  }
+  .error-page p {
+    font-size: 1rem;
+  }
+}
